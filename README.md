@@ -6,3 +6,7 @@ Plan and execute an endpoint deployment strategy, using essential elements of mo
 * Manage and maintain devices
 * Manage applications
 * Protect devices
+
+## Skills
+* Manage authentication and compliance in Windows
+* Manage endpoint security using Intune
