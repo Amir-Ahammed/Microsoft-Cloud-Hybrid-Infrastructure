@@ -1,7 +1,7 @@
 # Jump To
 1. Introduction
 
-# Introduction to Microsoft 365 and Azure
+# 1. Introduction to Microsoft 365 and Azure
 This topic provides a foundational overview of Microsoft 365 and Microsoft Azure — two core components of the modern Microsoft cloud ecosystem. It explains how Microsoft 365 delivers cloud-based productivity and collaboration tools (like Teams, Intune, Exchange, and SharePoint), while Azure provides the underlying cloud infrastructure and identity services (like Entra ID, VMs, networking, and security). It also highlights how these platforms integrate to support secure identity management, device compliance, and enterprise-level IT operations.
 
 ## 🔷 What is Microsoft 365?
@@ -40,7 +40,42 @@ Microsoft 365 = The tools you use | Azure = The engine that powers those tools
 | **Security & Compliance Center** | Data loss prevention, audit logs, security reports |
 
 
-# A foundation for Microsoft Active Directory Domains
+
+
+# 2. Microsoft Active Directory Domain Architecture 
+Learn the basics of Active Directory Domains, including how they help manage users, computers, and resources in a Windows network. This guide covers key concepts and steps to get started with setting up and using Active Directory.
+
+## 🔷 What is Microsoft Active Directory (AD)?
+Active Directory is a directory service developed by Microsoft for Windows domain networks. It is used to manage and organize users, computers, and other resources within a network.
+
+## 🔷 What is a Domain in Active Directory?
+An AD domain is a logical group of network objects (like users, computers, and devices) that share the same AD database and security policies.
+ * A domain is identified by its DNS name (e.g., company.local).
+ * It is managed by one or more Domain Controllers (DCs).
+ * All objects in a domain are part of a single security boundary — meaning policies and permissions can be enforced centrally.
+
+## 🔷 Core Components of an AD Domain
+
+| Component                  | Description                                                                 |
+|----------------------------|-----------------------------------------------------------------------------|
+| **Domain Controller (DC)** | A server that stores the AD database and handles authentication and authorization |
+| **Users**                  | Individual accounts that authenticate to access resources on the network    |
+| **Computers**              | Devices that are joined to the domain for centralized control and policies  |
+| **Groups**                 | Logical collections of users or computers for easier permission management |
+| **Organizational Units (OUs)** | Containers for organizing AD objects and applying Group Policies        |
+
+  
+## 🔷 What is a Domain Controller (DC)?
+A Domain Controller is a Windows Server that runs Active Directory Domain Services (AD DS). It is the central authority for handling authentication and authorization within an AD domain.
+ * **Login Authentication**: Verifies credentials of users trying to access the network.
+ * **Directory Lookups**: Responds to queries for object information (e.g., user details, group membership).
+ * **Replication**: Syncs directory data with other DCs in the same domain or forest.
+ * **Policy Enforcement**: Applies Group Policy settings across domain members.
+
+
+
+
+
 
 # A foundation for Remote Access, DMZs, and Virtualization
 
