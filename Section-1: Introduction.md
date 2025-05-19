@@ -1,10 +1,16 @@
+---
 # Jump To
 1. Introduction
+2. Microsoft Active Directory (AD) Architecture & Core Components
+3. 
 
-# 1. Introduction to Microsoft 365 and Azure
+---
+
+
+## 1. Introduction to Microsoft 365 and Azure
 This topic provides a foundational overview of Microsoft 365 and Microsoft Azure — two core components of the modern Microsoft cloud ecosystem. It explains how Microsoft 365 delivers cloud-based productivity and collaboration tools (like Teams, Intune, Exchange, and SharePoint), while Azure provides the underlying cloud infrastructure and identity services (like Entra ID, VMs, networking, and security). It also highlights how these platforms integrate to support secure identity management, device compliance, and enterprise-level IT operations.
 
-## 🔷 What is Microsoft 365?
+### 🔷 What is Microsoft 365?
 Microsoft 365 is a cloud-based productivity suite (PaaS) that includes:
   * **Office Apps**: Word, Excel, Outlook, PowerPoint (web and desktop versions)
   * **Exchange Online**: Cloud-based email and calendaring
@@ -13,7 +19,7 @@ Microsoft 365 is a cloud-based productivity suite (PaaS) that includes:
   * **Microsoft Teams**: Chat, video meetings, and collaboration
   * **Intune**: Device and application management (MDM/MAM)
 
-## 🔷 What is Microsoft Azure?
+### 🔷 What is Microsoft Azure?
 Azure is Microsoft’s cloud platform offering infrastructure, platform, and software services (IaaS, PaaS, SaaS).
   * **Azure Virtual Machines**: Cloud-based Windows/Linux servers
   * **Azure Storage**: Blob, file, queue, and disk storage
@@ -22,14 +28,7 @@ Azure is Microsoft’s cloud platform offering infrastructure, platform, and sof
   * **Azure Monitor & Defender**: Security, monitoring, and compliance tools
   * **Azure AD Connect**: Syncs on-premises AD with Entra ID (hybrid identity)
 
-## 🔷 How Microsoft 365 and Azure Work Together
-Microsoft 365 = The tools you use | Azure = The engine that powers those tools
-  * Single Sign-On (SSO) across Microsoft 365 and Azure
-  * Multi-Factor Authentication (MFA) via Azure
-  * Licensing & Role Management is unified using Microsoft Admin Centers
-  * Device management and compliance enforced via Microsoft Intune integrated with Azure AD
-
-## 🔷 Admin Portals You Should Know
+### 🔷 Admin Portals You Should Know
 
 | Portal                        | Purpose                                             |
 |------------------------------|-----------------------------------------------------|
@@ -39,27 +38,97 @@ Microsoft 365 = The tools you use | Azure = The engine that powers those tools
 | **Azure Portal**              | Manage all Azure resources (VMs, networks, storage) |
 | **Security & Compliance Center** | Data loss prevention, audit logs, security reports |
 
+---
 
-# 2. Microsoft Active Directory Domain Architecture 
-Learn the basics of Active Directory Domains, including how they help manage users, computers, and resources in a Windows network. This guide covers key concepts and steps to get started with setting up and using Active Directory.
+## 2. Microsoft Active Directory Domain Services (AD DS)
+Active Directory (AD) is a directory service developed by Microsoft for Windows domain networks. It is a centralized database that stores information about users, computers, printers, and other network resources, allowing administrators to manage permissions and access control efficiently.
 
-## 🔷 What is Microsoft Active Directory (AD)?
-Active Directory is a directory service developed by Microsoft for Windows domain networks. It is used to manage and organize users, computers, and other resources within a network.
+### 📌 Microsoft AD: Key Features
+* **Centralized User & Resource Management**
+  - Stores **user/computer accounts, passwords, and permissions** in a centralized directory.
+  - Manages access to network resources (files, printers, apps).
+* **Authentication & Security**
+  - **Kerberos**: Primary authentication protocol (secure ticket-based).
+  - **NTLM**: Legacy fallback protocol (less secure).
+  - **Multi-Factor Authentication (MFA)**: Supported via Azure AD hybrid integration.
+  - **Group Policy Objects (GPOs)**: Enforce security policies, deploy software, run scripts, and manage registry settings.
+* **Hierarchical Structure (Domain, Trees, Forests)**
+  - **Domains**: Logical groups (e.g., `company.local`).
+  - **Trees**: Multiple domains sharing a contiguous namespace (e.g., `us.company.local`, `eu.company.local`).
+  - **Forests**: Collections of domain trees with shared **trust relationships** (transitive or non-transitive).
+* **LDAP Compatibility**
+  - Queries and modifies directory data using **Lightweight Directory Access Protocol (LDAP)**.
+* **Single Sign-On (SSO)**
+  - Users authenticate once to access multiple services (on-premises or cloud-integrated).
+* **Replication & Redundancy**
+  - **Domain Controllers (DCs)**: Replicate data for fault tolerance.
+  - **FSMO Roles**: Critical roles like Schema Master and PDC Emulator handle unique tasks.
+* **DNS Dependency**
+  - Requires **DNS** for domain naming, service discovery, and DC location.
+* **Extensibility**
+  - **Schema Customization**: Add custom objects/attributes (e.g., employee IDs, department codes).
+* **Integration & Compliance**
+  - **Azure AD Hybrid**: Sync with cloud services for hybrid environments.
+  - **Audit Logs**: Track security events (logins, permission changes) for compliance.
 
-## 🔷 How Active Directory (AD) Works
-Active Directory is a directory service that stores information about users, computers, and other resources in a centralized, hierarchical database. It enables:
- * **Authentication** – Verifying user identities
- * **Authorization** – Granting access to resources
- * **Centralized management** – Managing users, devices, policies from one place
-AD operates using a multi-master replication model, meaning changes can be made on any Domain Controller and will sync across all DCs.
+## 🔷 Microsoft AD: Core Components
+* **Core Services**
+  - **AD Domain Services (AD DS)** – Central authentication/authorization.
+  - **Domain** – Logical security boundary (e.g., `corp.example.com`).
+  - **Domain Controller (DC)** – Hosts AD DS; replicates changes.
+  - **Global Catalog (GC)** – Enables cross-domain queries.
+* **Key Roles**
+  - **FSMO Roles** – Schema Master, PDC Emulator, etc.
+  - **Group Policy (GPOs)** – Policy enforcement across domains/OUs.
+  - **Organizational Units (OUs)** – Hierarchical object organization.
+  - **AD Replication** – Multi-master replication with KCC-managed topology.
+* **Physical & Logical Design**
+  - **AD Sites & Subnets** – Optimize traffic for WAN/LAN.
+  - **Trust Relationships** – Connect domains/forests (transitive/non-transitive).
+  - **Read-Only DCs (RODCs)** – Secure deployment for remote sites.
+* **Dependencies & Tools**
+  - **DNS Integration** – Critical for AD functionality (SRV records).
+  - **AD Database (NTDS.dit)** – Storage location for objects.
+  - **AD Database (NTDS.dit)** – Storage location for objects.
 
-## 🔷 What is a Domain in Active Directory?
+
+
+
+
+
+
+
+
+* **AD Domain Services (AD DS)**
+  - The core service handling authentication and object management.
+  - Schema: Defines object classes/attributes (e.g., user, group, printer).
+  - Global Catalog (GC): A distributed index of all objects in the forest for fast searches.
+  - Runs on Domain Controllers (DCs).
+* **AD Domain**
+  - A logical security boundary (e.g., `corp.example.com`).
+  - Core unit for administration, security, and policy enforcement.
+  - Each domain has a unique DNS name.
+  - Contains its own objects (users, groups, computers) and domain controllers.
+* **Domain Controller (DC)** – The server hosting AD DS.
+  - A server hosting AD DS.
+  - Authenticates users and enforces policies.
+* **FSMO Roles** – Specialized DC roles (Schema Master, PDC Emulator, etc.).
+  - Schema Master (modifies AD schema).
+* **Group Policy (GPOs)** – Centralized policy enforcement.
+* **Organizational Units (OUs)** – Containers for organizing AD objects.
+
+
+### AD Domain Services (AD DS)
+
+
+
+### What is a Domain in Active Directory?
 An AD domain is a logical group of network objects (like users, computers, and devices) that share the same AD database and security policies.
  * A domain is identified by its DNS name (e.g., company.local).
  * It is managed by one or more Domain Controllers (DCs).
  * All objects in a domain are part of a single security boundary — meaning policies and permissions can be enforced centrally.
 
-## 🔷 Core Components of an AD Domain
+Core Components of an AD Domain
 
 | Component                  | Description                                                                 |
 |----------------------------|-----------------------------------------------------------------------------|
@@ -69,27 +138,15 @@ An AD domain is a logical group of network objects (like users, computers, and d
 | **Groups**                 | Logical collections of users or computers for easier permission management |
 | **Organizational Units (OUs)** | Containers for organizing AD objects and applying Group Policies        |
 
-## 🔷 How AD Domains Work
-Understanding how Active Directory (AD) Domains operate is essential for managing users, computers, and policies in an IT environment. Here's a step-by-step breakdown:
 
-### 1. Join Devices to the Domain
-- Computers are joined to the domain so that they can be centrally managed.
-- Once joined, they become part of the domain’s security boundary.
-
-### 2. User Authentication
-- Users log in with domain credentials (e.g., `amir@company.local`).
-- The **Domain Controller (DC)** verifies the username and password using the AD database.
-
-### 3. Group Policy Application
-- **Group Policy Objects (GPOs)** are applied to users and computers based on their location in the domain (via OUs).
-- Policies may include software deployment, password rules, firewall settings, and more.
-
-### 4. Central Management
-- Admins can manage user accounts, reset passwords, join/remove computers, and apply policies—all from a central location.
-- This enables consistency and control across large environments.
 
 ---
 
+
+
+| Feature | Description |
+|---------|-------------|
+| ...     | ...         |
 
 
 
