@@ -88,7 +88,7 @@ Azure is Microsoft’s cloud platform offering infrastructure, platform, and sof
   - **Microsoft Entra ID**: Sync with cloud services for hybrid environments.
   - **Audit Logs**: Track security events (logins, permission changes) for compliance.
 
-## 🔷 How It Works
+### 🔷 How It Works
 * **The Directory (NTDS.dit)**: Imagine a big, organized address book or database stored on servers called **Domain Controllers (DCs)**. This database holds all the info about users, computers, permissions, etc
 * **Domain Controllers (DCs)**: Think of these as powerful Windows Servers that act as the **guardians and managers** of the domain because they run the **Active Directory Domain Services (AD DS)**
   - When you log in to a computer joined to the domain, your computer talks to a DC.
@@ -100,9 +100,7 @@ Azure is Microsoft’s cloud platform offering infrastructure, platform, and sof
   - Everything is organized in a hierarchy: **Forest** (top level) > **Trees** (if multiple related domain structures) > **Domains** (e.g., `sales.mycompany.com`) > **Organizational Units (OUs)** (e.g., `US_Sales_Team` OU). This allows for clear organization and targeted policy application.
 
 
----
-
-## 🔷 What is a Domain in Active Directory?
+### 🔷 What is a Domain in Active Directory?
 An AD domain is a logical group of network objects (like users, computers, and devices) that share the same AD database and security policies.
  * A domain is identified by its DNS name (e.g., company.local).
  * It is managed by one or more Domain Controllers (DCs).
@@ -118,11 +116,7 @@ Core Components of an AD Domain
 | **Groups**                 | Logical collections of users or computers for easier permission management |
 | **Organizational Units (OUs)** | Containers for organizing AD objects and applying Group Policies        |
 
----
 
-
-
-
-# A foundation for Remote Access, DMZs, and Virtualization
+## 3. Network Infrastructure Foundations: Remote Access, DMZs, and Virtualization
 
 
