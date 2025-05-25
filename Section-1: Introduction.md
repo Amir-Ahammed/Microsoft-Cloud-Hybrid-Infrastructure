@@ -59,18 +59,18 @@ Azure is Microsoft’s cloud platform offering infrastructure, platform, and sof
 * **Security & Authentication:**
   - **Identifies users and computers**: Makes sure you are who you say you are (like a bouncer checking IDs – this is called authentication).
   - **Controls access**: Decides what you are allowed to use or see (this is called **authorization**). It uses things like **Kerberos** (a secure ticket system) for this
-  - **Multi-Factor Authentication (MFA)**: Supported via Azure AD hybrid integration.
+  - **Multi-Factor Authentication (MFA)**: Confirms it's really you with extra proof (beyond just a password). It uses things like phone codes or biometrics, often via Microsoft Entra ID.
   - **Group Policy Objects (GPOs)**: Lets admins set rules for security, software installation, and desktop settings across many computers automatically
 
 * **Organization & Structure:**
   - **Domains**: The main way AD DS groups things. Think of `company.com` as a domain – it's a boundary for management and security.
   - **Organizational Units (OUs)**: Folders within a domain to further organize users, computers (e.g., "Sales" OU, "Marketing" OU). This helps delegate administrative tasks.
-  - **Trees**: Multiple domains sharing a contiguous namespace (e.g., `us.company.local`, `eu.company.local`).
-  - **Forests**: Collections of domain trees with shared **trust relationships** (transitive or non-transitive).
+  - **Trees**: Groups domains that extend a common DNS name (like `uk.mycorp.com` from `mycorp.com`). These domains automatically trust each other.
+  - **Forests**: Unites one or more domain trees (even with different DNS names like `mycorp.com` and `anotherbusiness.org`). They all share a common directory blueprint and trust each other by default.
 
 * **Replication & Reliability**
   - **Domain Controllers (DCs)**: Information is copied and kept up-to-date across multiple servers called **Domain Controllers (DCs)**. If one DC has a problem, others can take over, so the network stays running (fault tolerance).
-  - **FSMO Roles**: Critical roles like Schema Master and PDC Emulator handle unique tasks.
+  - **FSMO Roles**: Assigns unique, critical AD DS jobs to a single designated Domain Controller (to prevent conflicts). These roles handle tasks like schema updates or distributing new security IDs.
 
 * **Directory Services:**
   - Provides a searchable directory (like a phonebook) so users and applications can find resources (e.g., finding a printer). It uses **LDAP** (Lightweight Directory Access Protocol) for queries.
@@ -96,69 +96,6 @@ Azure is Microsoft’s cloud platform offering infrastructure, platform, and sof
 ---
 
 
-
-
-
-
-
-
-
-
-
-* **Core Services**
-  - **AD Domain Services (AD DS)** – Central authentication/authorization.
-  - **Domain** – Logical security boundary (e.g., `corp.example.com`).
-  - **Domain Controller (DC)** – Hosts AD DS; replicates changes.
-  - **Global Catalog (GC)** – Enables cross-domain queries.
-* **Key Roles**
-  - **FSMO Roles** – Schema Master, PDC Emulator, etc.
-  - **Group Policy (GPOs)** – Policy enforcement across domains/OUs.
-  - **Organizational Units (OUs)** – Hierarchical object organization.
-  - **AD Replication** – Multi-master replication with KCC-managed topology.
-* **Physical & Logical Design**
-  - **AD Sites & Subnets** – Optimize traffic for WAN/LAN.
-  - **Trust Relationships** – Connect domains/forests (transitive/non-transitive).
-  - **Read-Only DCs (RODCs)** – Secure deployment for remote sites.
-* **Dependencies & Tools**
-  - **DNS Integration** – Critical for AD functionality (SRV records).
-  - **AD Database (NTDS.dit)** – Storage location for objects.
-  - **AD Database (NTDS.dit)** – Storage location for objects.
-* **Security & Authentication**
-  - **Kerberos**: Primary authentication protocol (secure ticket-based).
-  - **NTLM**: Legacy fallback protocol (less secure).
-  - **Multi-Factor Authentication (MFA)**: Supported via Azure AD hybrid integration.
-  - **Group Policy Objects (GPOs)**: Enforce security policies, deploy software, run scripts, and manage registry settings.
-
-
-
-
-
-
-
-
-* **AD Domain Services (AD DS)**
-  - The core service handling authentication and object management.
-  - Schema: Defines object classes/attributes (e.g., user, group, printer).
-  - Global Catalog (GC): A distributed index of all objects in the forest for fast searches.
-  - Runs on Domain Controllers (DCs).
-* **AD Domain**
-  - A logical security boundary (e.g., `corp.example.com`).
-  - Core unit for administration, security, and policy enforcement.
-  - Each domain has a unique DNS name.
-  - Contains its own objects (users, groups, computers) and domain controllers.
-* **Domain Controller (DC)** – The server hosting AD DS.
-  - A server hosting AD DS.
-  - Authenticates users and enforces policies.
-* **FSMO Roles** – Specialized DC roles (Schema Master, PDC Emulator, etc.).
-  - Schema Master (modifies AD schema).
-* **Group Policy (GPOs)** – Centralized policy enforcement.
-* **Organizational Units (OUs)** – Containers for organizing AD objects.
-
-
-### AD Domain Services (AD DS)
-
-
-
 ### What is a Domain in Active Directory?
 An AD domain is a logical group of network objects (like users, computers, and devices) that share the same AD database and security policies.
  * A domain is identified by its DNS name (e.g., company.local).
@@ -178,12 +115,6 @@ Core Components of an AD Domain
 
 
 ---
-
-
-
-| Feature | Description |
-|---------|-------------|
-| ...     | ...         |
 
 
 
