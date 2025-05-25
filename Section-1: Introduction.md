@@ -78,7 +78,7 @@ Azure is Microsoft’s cloud platform offering infrastructure, platform, and sof
   - Log in once with your username and password to access multiple network resources you're authorized for, without needing to log in repeatedly.
 
 * **Integration & Compliance**
-  - **Azure AD Hybrid**: Sync with cloud services for hybrid environments.
+  - **Microsoft Entra ID**: Sync with cloud services for hybrid environments.
   - **Audit Logs**: Track security events (logins, permission changes) for compliance.
 
 ## 🔷 How It Works
