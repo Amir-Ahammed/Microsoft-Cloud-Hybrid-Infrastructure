@@ -85,7 +85,6 @@ In today's digital world, **the cloud** is everywhere, and Microsoft stands as a
 | **Azure Portal**              | Manage all Azure resources (VMs, networks, storage) |
 | **Security & Compliance Center** | Data loss prevention, audit logs, security reports |
 
----
 
 # 2. Microsoft Active Directory Domain Services (AD DS)
 **Microsoft Active Directory Domain Services (AD DS)** is a server role in Windows Server operating systems that allows administrators to manage and organize network resources. It provides a centralized and secure way to manage users, computers, and other network objects within an organization.
