@@ -1,36 +1,27 @@
 # Jump To
 
-----
-
 1. [Introduction to Microsoft 365 and Azure](#1.0)
    - [Microsoft 365: Your Modern Workplace & Productivity Cloud](#1.1)
    - [Key Components & Services (What's Inside)](#1.1.1)
    - [Microsoft Azure: Your Global Cloud Computing Platform & Infrastructure](#1.2)
    - [Key Service Categories & Examples](#1.2.1)
    - [Admin Portals You Should Know](#1.3)
-1. [Microsoft Active Directory Domain Services (AD DS)](#2.0)
+2. [Microsoft Active Directory Domain Services (AD DS)](#2.0)
    - [What is AD DS?](#2.1)
    - [Key Features & Core Functions](#2.2)
    - [How It Works](#2.3)
-1. [What is a Domain in Active Directory?](#3.0)
-   - [What is AD DS?](#2.1)
-   - [Key Features & Core Functions](#2.2)
-   - [How It Works](#2.3)
-1. [Active Directory Connect (Azure AD Connect)](#4.0)
+3. [Domain in Active Directory](#3.0)
+   - [Key Features of an AD Domain](#3.1)
+   - [Core Components of an AD Domain](#3.2)
+   - [How It Works](#3.3)
+4. [Active Directory Connect (Azure AD Connect)](#4.0)
    - [Key Features of Azure AD Connect](#4.1)
    - [How It Works](#4.2)
-
+5. [Network Infrastructure Foundations: Remote Access, DMZs, and Virtualization](#5.0)
+   - [Remote Access](#5.1)
+   - [DMZs](#5.2)
+   - [Virtualization](#5.3)
 ----
-
-2. [Microsoft Active Directory Domain Services (AD DS)](#2)
-   - [What is AD DS?](#2.1)
-   - [Key Features & Core Functions](#2.2)
-   - [How It Works](#2.3)
-
-   -  
-3. Network Infrastructure Foundations: Remote Access, DMZs, and Virtualization
-
----
 
 
 # 1. Introduction to Microsoft Cloud Solutions: Microsoft 365 and Azure <a name="1.0"></a>
@@ -113,6 +104,12 @@ In today's digital world, **the cloud** is everywhere, and Microsoft stands as a
 | **Azure Portal**              | Manage all Azure resources (VMs, networks, storage) |
 | **Security & Compliance Center** | Data loss prevention, audit logs, security reports |
 
+### 📌 How It Works <a name="3.3"></a>
+* **User Authentication**: When a user logs in, their computer contacts a DC to verify credentials (via Kerberos/NTLM).
+* Resource Access:
+* Policy Enforcement:
+* Replication:
+
 ---
 
 # 2. Microsoft Active Directory Domain Services (AD DS) <a name="2.0"></a>
@@ -177,12 +174,16 @@ In today's digital world, **the cloud** is everywhere, and Microsoft stands as a
 ---
 
 ## 🔷 What is a Domain in Active Directory? <a name="3.0"></a>
-An AD domain is a logical group of network objects (like users, computers, and devices) that share the same AD database and security policies.
- * A domain is identified by its DNS name (e.g., company.local).
- * It is managed by one or more Domain Controllers (DCs).
- * All objects in a domain are part of a single security boundary — meaning policies and permissions can be enforced centrally.
+An Active Directory Domain is a logical grouping of users, computers, and devices that share a centralized directory database and security policies. It serves as the core boundary for authentication, resource management, and policy enforcement in an on-premises network.
 
-Core Components of an AD Domain
+### 📌 Key Features of an AD Domain <a name="3.1"></a>
+* Centralized Management:
+* Security Boundary:
+* DNS Integration:
+* Hierarchical Structure:
+* Multi-Master Replication:
+
+### 📌 Core Components of an AD Domain <a name="3.2"></a>
 
 | Component                  | Description                                                                 |
 |----------------------------|-----------------------------------------------------------------------------|
