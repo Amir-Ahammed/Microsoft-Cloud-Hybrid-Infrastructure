@@ -1,9 +1,9 @@
 # Jump To
 1. [Introduction to Microsoft 365 and Azure](#introduction_to_microsoft_cloud_solutions_microsoft_365_and_azure)
    - [Microsoft 365: Your Modern Workplace & Productivity Cloud](#microsoft_365)
-   - [Key Components & Services (What's Inside)](#key_components_&_services)
+     - [Key Components & Services (What's Inside)](#key_components_&_services)
    - [Microsoft Azure: Your Global Cloud Computing Platform & Infrastructure](#microsoft_azure)
-   - [Key Service Categories & Examples](#key_service_categories_&_examples)
+     - [Key Service Categories & Examples](#key_service_categories_&_examples)
    - [Admin Portals You Should Know](#admin_portals)
 3. Microsoft Active Directory Domain Services (AD DS)
 4. Network Infrastructure Foundations: Remote Access, DMZs, and Virtualization
