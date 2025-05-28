@@ -1,19 +1,23 @@
----
 # Jump To
-1. Introduction to Microsoft 365 and Azure
-2. Microsoft Active Directory Domain Services (AD DS)
-3. Network Infrastructure Foundations: Remote Access, DMZs, and Virtualization
+1. [Introduction to Microsoft 365 and Azure](#introduction_to_microsoft_cloud_solutions_microsoft_365_and_azure)
+   - [Microsoft 365: Your Modern Workplace & Productivity Cloud](#microsoft_365)
+   - [Key Components & Services (What's Inside)](#key_components_&_services)
+   - [Microsoft Azure: Your Global Cloud Computing Platform & Infrastructure](#microsoft_azure)
+   - [Key Service Categories & Examples](#key_service_categories_&_examples)
+   - [Admin Portals You Should Know](#admin_portals)
+3. Microsoft Active Directory Domain Services (AD DS)
+4. Network Infrastructure Foundations: Remote Access, DMZs, and Virtualization
 
 ---
 
 
-# 1. Introduction to Microsoft Cloud Solutions: Microsoft 365 and Azure
+# 1. Introduction to Microsoft Cloud Solutions: Microsoft 365 and Azure <a name="introduction_to_microsoft_cloud_solutions_microsoft_365_and_azure"></a>
 In today's digital world, **the cloud** is everywhere, and Microsoft stands as a giant in this space with two flagship offerings: **Microsoft 365** and **Microsoft Azure**. Together, they provide a vast array of tools and services that power businesses, individuals, and developers worldwide. Let's explore what they are and why they're considered a powerhouse.
 
-## 🔷 Microsoft 365: Your Modern Workplace & Productivity Cloud
+## 🔷 Microsoft 365: Your Modern Workplace & Productivity Cloud <a name="microsoft_365"></a>
 **What it is**: Think of Microsoft 365 (often called M365) as your **all-in-one digital toolkit for work, communication, and creativity, delivered from the cloud**. It's a subscription service that bundles familiar Office apps with powerful cloud services for collaboration, security, and device management. It's primarily a **SaaS (Software as a Service)** offering.
 
-### 📌 Key Components & Services (What's Inside)
+### 📌 Key Components & Services (What's Inside) <a name="key_components_&_services"></a>
 * **Familiar Office Apps**:
   - **Word, Excel, PowerPoint, Outlook**: The classic productivity tools, now cloud-enabled with features like real-time co-authoring and cloud storage.
   - **OneNote**: Your digital notebook.
@@ -35,10 +39,10 @@ In today's digital world, **the cloud** is everywhere, and Microsoft stands as a
 
 ---
 
-## 🔷 Microsoft Azure: Your Global Cloud Computing Platform & Infrastructure
+## 🔷 Microsoft Azure: Your Global Cloud Computing Platform & Infrastructure <a name="microsoft_azure"></a>
 **What it is**: Think of Microsoft Azure as a **vast, global "digital construction yard"** or a **"supercomputer you can rent parts of."** It's a comprehensive cloud computing platform offering a massive collection of services that let you build, deploy, and manage applications and infrastructure. It provides **IaaS (Infrastructure as a Service), PaaS (Platform as a Service)**, and also some **SaaS** solutions.
 
-### 📌 Key Service Categories & Examples (What You Can Build/Do):
+### 📌 Key Service Categories & Examples (What You Can Build/Do): <a name="key_service_categories_&_examples"></a>
 * **Compute**:
   - **Azure Virtual Machines (VMs)**: Rent servers (Windows or Linux) in the cloud. (IaaS)
   - **Azure App Service**: Build and host web apps and APIs without managing the underlying infrastructure. (PaaS)
@@ -77,7 +81,7 @@ In today's digital world, **the cloud** is everywhere, and Microsoft stands as a
   - **GitHub & GitHub Actions**: Deep integration for source control and CI/CD.
 
 
-### 📌 Admin Portals You Should Know
+### 📌 Admin Portals You Should Know <a name="admin_portals"></a>
 
 | Portal                        | Purpose                                             |
 |------------------------------|-----------------------------------------------------|
