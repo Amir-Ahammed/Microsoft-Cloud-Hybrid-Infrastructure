@@ -1,20 +1,24 @@
 # Jump To
-1. [Introduction to Microsoft 365 and Azure](#introduction_to_microsoft_cloud_solutions_microsoft_365_and_azure)
-   - [Microsoft 365: Your Modern Workplace & Productivity Cloud](#microsoft_365)
-     - [Key Components & Services (What's Inside)](#key_components_&_services)
+1. [Introduction to Microsoft 365 and Azure](#1)
+   - [Microsoft 365: Your Modern Workplace & Productivity Cloud](#1.1)
+   - [Key Components & Services (What's Inside)](#key_components_&_services)
    - [Microsoft Azure: Your Global Cloud Computing Platform & Infrastructure](#microsoft_azure)
-     - [Key Service Categories & Examples](#key_service_categories_&_examples)
+   - [Key Service Categories & Examples](#key_service_categories_&_examples)
    - [Admin Portals You Should Know](#admin_portals)
-3. Microsoft Active Directory Domain Services (AD DS)
-4. Network Infrastructure Foundations: Remote Access, DMZs, and Virtualization
+2. [Microsoft Active Directory Domain Services (AD DS)](#adds)
+   - [What is AD DS?](#what_is_adds)
+   - [Key Features & Core Functions](#)
+
+   -  
+3. Network Infrastructure Foundations: Remote Access, DMZs, and Virtualization
 
 ---
 
 
-# 1. Introduction to Microsoft Cloud Solutions: Microsoft 365 and Azure <a name="introduction_to_microsoft_cloud_solutions_microsoft_365_and_azure"></a>
+# 1. Introduction to Microsoft Cloud Solutions: Microsoft 365 and Azure <a name="1"></a>
 In today's digital world, **the cloud** is everywhere, and Microsoft stands as a giant in this space with two flagship offerings: **Microsoft 365** and **Microsoft Azure**. Together, they provide a vast array of tools and services that power businesses, individuals, and developers worldwide. Let's explore what they are and why they're considered a powerhouse.
 
-## 🔷 Microsoft 365: Your Modern Workplace & Productivity Cloud <a name="microsoft_365"></a>
+## 🔷 Microsoft 365: Your Modern Workplace & Productivity Cloud <a name="1.1"></a>
 **What it is**: Think of Microsoft 365 (often called M365) as your **all-in-one digital toolkit for work, communication, and creativity, delivered from the cloud**. It's a subscription service that bundles familiar Office apps with powerful cloud services for collaboration, security, and device management. It's primarily a **SaaS (Software as a Service)** offering.
 
 ### 📌 Key Components & Services (What's Inside) <a name="key_components_&_services"></a>
@@ -93,16 +97,16 @@ In today's digital world, **the cloud** is everywhere, and Microsoft stands as a
 
 ---
 
-# 2. Microsoft Active Directory Domain Services (AD DS)
+# 2. Microsoft Active Directory Domain Services (AD DS) <a name="adds"></a>
 **Microsoft Active Directory Domain Services (AD DS)** is a server role in Windows Server operating systems that allows administrators to manage and organize network resources. It provides a centralized and secure way to manage users, computers, and other network objects within an organization.
 
-## 🔷 What is AD DS?
+## 🔷 What is AD DS? <a name="what_is_adds"></a>
 **AD DS** is a **centralized database** that stores information about network resources. This includes:
 * **Users** (like employees, their usernames, passwords)
 * **Computers** (which machines are part of the network)
 * **Printers**, **shared folders**, and other devices/services.
 
-### 📌 Key Features & Core Functions
+### 📌 Key Features & Core Functions <a name="Key Features & Core Functions"></a>
 * **Centralized User & Resource Management:**
   - Stores **user/computer accounts, passwords, and permissions** in a centralized directory.
   - Manages all users, computers, and resources from the directory.
