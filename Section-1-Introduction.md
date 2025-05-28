@@ -3,9 +3,9 @@
 
 | Section | Subtopics |
 |---------|-----------|
-| **Microsoft Cloud** | [M365](#1.1) • [Azure](#1.2) |
-| **Active Directory** | [AD DS](#2.0) • [Domains](#3.0) • [Azure AD Connect](#4.0) |
-| **Networking** | [Remote Access](#5.1) • [DMZs](#5.2) |
+| **Microsoft Cloud**  | [M365](#1.1) • [Azure](#1.2) • [Admin Portals](#1.3)          |
+| **Active Directory** | [AD DS](#2.0) • [Domains](#3.0) • [Azure AD Connect](#4.0)    |
+| **Networking**       | [Remote Access](#5.1) • [DMZs](#5.2) • [Virtualization](#5.3) |
 
 </details>
 
