@@ -4,10 +4,10 @@
    - [Key Components & Services (What's Inside)](#1.1.1)
    - [Microsoft Azure: Your Global Cloud Computing Platform & Infrastructure](#1.2)
    - [Key Service Categories & Examples](#1.2.1)
-   - [Admin Portals You Should Know](#admin_portals)
-2. [Microsoft Active Directory Domain Services (AD DS)](#adds)
-   - [What is AD DS?](#what_is_adds)
-   - [Key Features & Core Functions](#)
+   - [Admin Portals You Should Know](#1.3)
+2. [Microsoft Active Directory Domain Services (AD DS)](#2)
+   - [What is AD DS?](#2.1)
+   - [Key Features & Core Functions](#2.2)
 
    -  
 3. Network Infrastructure Foundations: Remote Access, DMZs, and Virtualization
@@ -97,16 +97,16 @@ In today's digital world, **the cloud** is everywhere, and Microsoft stands as a
 
 ---
 
-# 2. Microsoft Active Directory Domain Services (AD DS) <a name="adds"></a>
+# 2. Microsoft Active Directory Domain Services (AD DS) <a name="2"></a>
 **Microsoft Active Directory Domain Services (AD DS)** is a server role in Windows Server operating systems that allows administrators to manage and organize network resources. It provides a centralized and secure way to manage users, computers, and other network objects within an organization.
 
-## 🔷 What is AD DS? <a name="what_is_adds"></a>
+## 🔷 What is AD DS? <a name="2.1"></a>
 **AD DS** is a **centralized database** that stores information about network resources. This includes:
 * **Users** (like employees, their usernames, passwords)
 * **Computers** (which machines are part of the network)
 * **Printers**, **shared folders**, and other devices/services.
 
-### 📌 Key Features & Core Functions <a name="Key Features & Core Functions"></a>
+### 📌 Key Features & Core Functions <a name="2.2"></a>
 * **Centralized User & Resource Management:**
   - Stores **user/computer accounts, passwords, and permissions** in a centralized directory.
   - Manages all users, computers, and resources from the directory.
