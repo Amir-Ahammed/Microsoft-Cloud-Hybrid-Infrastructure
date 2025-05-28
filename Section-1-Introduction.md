@@ -148,6 +148,8 @@ In today's digital world, **the cloud** is everywhere, and Microsoft stands as a
   - **Microsoft Entra ID**: Sync with cloud services for hybrid environments.
   - **Audit Logs**: Track security events (logins, permission changes) for compliance.
 
+[↑ Back to Top](#)  <!-- Links to the very top of the page -->
+
 ### 📌 How It Works <a name="2.3"></a>
 * **The Directory (NTDS.dit)**: Imagine a big, organized address book or database stored on servers called **Domain Controllers (DCs)**. This database holds all the info about users, computers, permissions, etc
 * **Domain Controllers (DCs)**: Think of these as powerful Windows Servers that act as the **guardians and managers** of the domain because they run the **Active Directory Domain Services (AD DS)**
