@@ -1,13 +1,31 @@
 # Jump To
-1. [Introduction to Microsoft 365 and Azure](#1)
+
+----
+
+1. [Introduction to Microsoft 365 and Azure](#1.0)
    - [Microsoft 365: Your Modern Workplace & Productivity Cloud](#1.1)
    - [Key Components & Services (What's Inside)](#1.1.1)
    - [Microsoft Azure: Your Global Cloud Computing Platform & Infrastructure](#1.2)
    - [Key Service Categories & Examples](#1.2.1)
    - [Admin Portals You Should Know](#1.3)
+1. [Microsoft Active Directory Domain Services (AD DS)](#2.0)
+   - [What is AD DS?](#2.1)
+   - [Key Features & Core Functions](#2.2)
+   - [How It Works](#2.3)
+1. [What is a Domain in Active Directory?](#3.0)
+   - [What is AD DS?](#2.1)
+   - [Key Features & Core Functions](#2.2)
+   - [How It Works](#2.3)
+1. [Active Directory Connect (Azure AD Connect)](#4.0)
+   - [Key Features of Azure AD Connect](#4.1)
+   - [How It Works](#4.2)
+
+----
+
 2. [Microsoft Active Directory Domain Services (AD DS)](#2)
    - [What is AD DS?](#2.1)
    - [Key Features & Core Functions](#2.2)
+   - [How It Works](#2.3)
 
    -  
 3. Network Infrastructure Foundations: Remote Access, DMZs, and Virtualization
@@ -15,7 +33,7 @@
 ---
 
 
-# 1. Introduction to Microsoft Cloud Solutions: Microsoft 365 and Azure <a name="1"></a>
+# 1. Introduction to Microsoft Cloud Solutions: Microsoft 365 and Azure <a name="1.0"></a>
 In today's digital world, **the cloud** is everywhere, and Microsoft stands as a giant in this space with two flagship offerings: **Microsoft 365** and **Microsoft Azure**. Together, they provide a vast array of tools and services that power businesses, individuals, and developers worldwide. Let's explore what they are and why they're considered a powerhouse.
 
 ## 🔷 Microsoft 365: Your Modern Workplace & Productivity Cloud <a name="1.1"></a>
@@ -97,7 +115,7 @@ In today's digital world, **the cloud** is everywhere, and Microsoft stands as a
 
 ---
 
-# 2. Microsoft Active Directory Domain Services (AD DS) <a name="2"></a>
+# 2. Microsoft Active Directory Domain Services (AD DS) <a name="2.0"></a>
 **Microsoft Active Directory Domain Services (AD DS)** is a server role in Windows Server operating systems that allows administrators to manage and organize network resources. It provides a centralized and secure way to manage users, computers, and other network objects within an organization.
 
 ## 🔷 What is AD DS? <a name="2.1"></a>
@@ -145,7 +163,7 @@ In today's digital world, **the cloud** is everywhere, and Microsoft stands as a
   - **Microsoft Entra ID**: Sync with cloud services for hybrid environments.
   - **Audit Logs**: Track security events (logins, permission changes) for compliance.
 
-### 📌 How It Works
+### 📌 How It Works <a name="2.3"></a>
 * **The Directory (NTDS.dit)**: Imagine a big, organized address book or database stored on servers called **Domain Controllers (DCs)**. This database holds all the info about users, computers, permissions, etc
 * **Domain Controllers (DCs)**: Think of these as powerful Windows Servers that act as the **guardians and managers** of the domain because they run the **Active Directory Domain Services (AD DS)**
   - When you log in to a computer joined to the domain, your computer talks to a DC.
@@ -158,7 +176,7 @@ In today's digital world, **the cloud** is everywhere, and Microsoft stands as a
 
 ---
 
-## 🔷 What is a Domain in Active Directory?
+## 🔷 What is a Domain in Active Directory? <a name="3.0"></a>
 An AD domain is a logical group of network objects (like users, computers, and devices) that share the same AD database and security policies.
  * A domain is identified by its DNS name (e.g., company.local).
  * It is managed by one or more Domain Controllers (DCs).
@@ -176,10 +194,10 @@ Core Components of an AD Domain
 
 ---
 
-## 🔷 Active Directory Connect (Azure AD Connect)
+## 🔷 Active Directory Connect (Azure AD Connect) <a name="4.0"></a>
 Active Directory Connect (Azure AD Connect) is a crucial tool for integrating on-premises Active Directory Domain Services (AD DS) with Microsoft Entra ID (formerly Azure Active Directory). This enables hybrid identity scenarios where users can seamlessly access both on-premises and cloud resources with a single set of credentials.
 
-### 📌 Key Features of Azure AD Connect
+### 📌 Key Features of Azure AD Connect <a name="4.1"></a>
 * **Synchronization:**
   - Syncs user accounts, groups, and other objects from on-premises AD to Azure AD.
   - Supports both one-way (on-premises to cloud) and writeback scenarios (e.g., password writeback).
@@ -192,7 +210,7 @@ Active Directory Connect (Azure AD Connect) is a crucial tool for integrating on
 * **Health Monitoring:**
   - Azure AD Connect Health provides monitoring and alerts for sync and authentication services.
 
-### 📌 How It Works
+### 📌 How It Works <a name="4.2"></a>
 * **Installation:**
   - Azure AD Connect is installed on a server in the on-premises environment, typically a domain-joined server.
 * **Configuration:**
@@ -204,6 +222,6 @@ Active Directory Connect (Azure AD Connect) is a crucial tool for integrating on
 
 ---
 
-# 3. Network Infrastructure Foundations: Remote Access, DMZs, and Virtualization
+# 3. Network Infrastructure Foundations: Remote Access, DMZs, and Virtualization <a name="5.0"></a>
 
 
