@@ -239,19 +239,19 @@ Modern networks rely on secure remote access, perimeter defense, and virtualizat
 * **Azure Firewall/Network Security Groups (NSGs)**
 * **Hyper-V/VMware Virtualization**
 
-### 📌 Remote Access
+### 📌 Remote Access  <a name="5.1"></a>
 * **VPN (Virtual Private Network):**
   - Encrypted tunnels (e.g., IPSec, SSL VPN) for secure remote connections to corporate networks.
   - **Azure VPN Gateway:** Connects on-premises networks to Azure VNets.
 * **Remote Desktop Services (RDS):** Hosted virtual desktops/apps for remote workers.
 * **Zero Trust Models:** Verify-before-trust access (e.g., Azure AD Conditional Access).
-### 📌 DMZ (Demilitarized Zone)
+### 📌 DMZ (Demilitarized Zone) <a name="5.2"></a>
 * **Purpose:** Isolate public-facing services (e.g., web servers) from internal networks.
 * **Design:**
   - **Dual Firewalls:** Outer firewall filters inbound traffic; inner firewall protects internal networks.
   - **Azure DMZ:** Use **Azure Firewall + NSGs** to segment subnets.
 * **Services Hosted:** Web servers, proxy servers, mail relays.
-### 📌 Virtualization
+### 📌 Virtualization <a name="5.3"></a>
 * **Hypervisors**:
   - **Type 1 (Bare-metal):** VMware ESXi, Microsoft Hyper-V, Azure Stack HCI.
   - **Type 2 (Hosted):** VirtualBox, VMware Workstation (for testing).
