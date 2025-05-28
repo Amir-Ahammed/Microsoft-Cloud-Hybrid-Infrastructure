@@ -21,8 +21,19 @@
    - [Remote Access](#5.1)
    - [DMZs](#5.2)
    - [Virtualization](#5.3)
-----
+---
+<details>
+<summary><b>📌 Jump To (Click to Expand)</b></summary>
 
+| Section | Subtopics |
+|---------|-----------|
+| **Microsoft Cloud** | [M365](#1_1) • [Azure](#1_2) |
+| **Active Directory** | [AD DS](#2_0) • [Domains](#3_0) • [Azure AD Connect](#4_0) |
+| **Networking** | [Remote Access](#5_1) • [DMZs](#5_2) |
+
+</details>
+
+---
 
 # 1. Introduction to Microsoft Cloud Solutions: Microsoft 365 and Azure <a name="1.0"></a>
 In today's digital world, **the cloud** is everywhere, and Microsoft stands as a giant in this space with two flagship offerings: **Microsoft 365** and **Microsoft Azure**. Together, they provide a vast array of tools and services that power businesses, individuals, and developers worldwide. Let's explore what they are and why they're considered a powerhouse.
