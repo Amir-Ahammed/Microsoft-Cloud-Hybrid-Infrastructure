@@ -13,7 +13,7 @@ In today's digital world, **the cloud** is everywhere, and Microsoft stands as a
 ## 🔷 Microsoft 365: Your Modern Workplace & Productivity Cloud
 **What it is**: Think of Microsoft 365 (often called M365) as your **all-in-one digital toolkit for work, communication, and creativity, delivered from the cloud**. It's a subscription service that bundles familiar Office apps with powerful cloud services for collaboration, security, and device management. It's primarily a **SaaS (Software as a Service)** offering.
 
-### Key Components & Services (What's Inside)
+### 📌 Key Components & Services (What's Inside)
 * **Familiar Office Apps**:
   - **Word, Excel, PowerPoint, Outlook**: The classic productivity tools, now cloud-enabled with features like real-time co-authoring and cloud storage.
   - **OneNote**: Your digital notebook.
@@ -33,10 +33,12 @@ In today's digital world, **the cloud** is everywhere, and Microsoft stands as a
   - **Microsoft Defender (various products)**: A suite of security solutions to protect identities, endpoints, applications, email, and data.
   - **Microsoft Entra ID (formerly Azure AD) P1/P2**: Provides identity and access management, including features like Single Sign-On (SSO) and Multi-Factor Authentication (MFA) for M365 and other cloud apps.
 
-### 🔷 Microsoft Azure: Your Global Cloud Computing Platform & Infrastructure
+---
+
+## 🔷 Microsoft Azure: Your Global Cloud Computing Platform & Infrastructure
 **What it is**: Think of Microsoft Azure as a **vast, global "digital construction yard"** or a **"supercomputer you can rent parts of."** It's a comprehensive cloud computing platform offering a massive collection of services that let you build, deploy, and manage applications and infrastructure. It provides **IaaS (Infrastructure as a Service), PaaS (Platform as a Service)**, and also some **SaaS** solutions.
 
-### Key Service Categories & Examples (What You Can Build/Do):
+### 📌 Key Service Categories & Examples (What You Can Build/Do):
 * **Compute**:
   - **Azure Virtual Machines (VMs)**: Rent servers (Windows or Linux) in the cloud. (IaaS)
   - **Azure App Service**: Build and host web apps and APIs without managing the underlying infrastructure. (PaaS)
@@ -75,7 +77,7 @@ In today's digital world, **the cloud** is everywhere, and Microsoft stands as a
   - **GitHub & GitHub Actions**: Deep integration for source control and CI/CD.
 
 
-### 🔷 Admin Portals You Should Know
+### 📌 Admin Portals You Should Know
 
 | Portal                        | Purpose                                             |
 |------------------------------|-----------------------------------------------------|
@@ -85,11 +87,12 @@ In today's digital world, **the cloud** is everywhere, and Microsoft stands as a
 | **Azure Portal**              | Manage all Azure resources (VMs, networks, storage) |
 | **Security & Compliance Center** | Data loss prevention, audit logs, security reports |
 
+---
 
 # 2. Microsoft Active Directory Domain Services (AD DS)
 **Microsoft Active Directory Domain Services (AD DS)** is a server role in Windows Server operating systems that allows administrators to manage and organize network resources. It provides a centralized and secure way to manage users, computers, and other network objects within an organization.
 
-### 🔷 What is AD DS?
+## 🔷 What is AD DS?
 **AD DS** is a **centralized database** that stores information about network resources. This includes:
 * **Users** (like employees, their usernames, passwords)
 * **Computers** (which machines are part of the network)
@@ -134,7 +137,7 @@ In today's digital world, **the cloud** is everywhere, and Microsoft stands as a
   - **Microsoft Entra ID**: Sync with cloud services for hybrid environments.
   - **Audit Logs**: Track security events (logins, permission changes) for compliance.
 
-### 🔷 How It Works
+### 📌 How It Works
 * **The Directory (NTDS.dit)**: Imagine a big, organized address book or database stored on servers called **Domain Controllers (DCs)**. This database holds all the info about users, computers, permissions, etc
 * **Domain Controllers (DCs)**: Think of these as powerful Windows Servers that act as the **guardians and managers** of the domain because they run the **Active Directory Domain Services (AD DS)**
   - When you log in to a computer joined to the domain, your computer talks to a DC.
@@ -145,8 +148,9 @@ In today's digital world, **the cloud** is everywhere, and Microsoft stands as a
 * **Structure**:
   - Everything is organized in a hierarchy: **Forest** (top level) > **Trees** (if multiple related domain structures) > **Domains** (e.g., `sales.mycompany.com`) > **Organizational Units (OUs)** (e.g., `US_Sales_Team` OU). This allows for clear organization and targeted policy application.
 
+---
 
-### 🔷 What is a Domain in Active Directory?
+## 🔷 What is a Domain in Active Directory?
 An AD domain is a logical group of network objects (like users, computers, and devices) that share the same AD database and security policies.
  * A domain is identified by its DNS name (e.g., company.local).
  * It is managed by one or more Domain Controllers (DCs).
@@ -161,6 +165,34 @@ Core Components of an AD Domain
 | **Computers**              | Devices that are joined to the domain for centralized control and policies  |
 | **Groups**                 | Logical collections of users or computers for easier permission management |
 | **Organizational Units (OUs)** | Containers for organizing AD objects and applying Group Policies        |
+
+---
+
+## 🔷 Active Directory Connect (Azure AD Connect)
+Active Directory Connect (Azure AD Connect) is a crucial tool for integrating on-premises Active Directory Domain Services (AD DS) with Microsoft Entra ID (formerly Azure Active Directory). This enables hybrid identity scenarios where users can seamlessly access both on-premises and cloud resources with a single set of credentials.
+
+### 📌 Key Features of Azure AD Connect
+* **Synchronization:**
+  - Syncs user accounts, groups, and other objects from on-premises AD to Azure AD.
+  - Supports both one-way (on-premises to cloud) and writeback scenarios (e.g., password writeback).
+* **Authentication Methods:**
+  - **Password Hash Synchronization (PHS)**: Syncs password hashes to Azure AD for authentication.
+  - **Pass-Through Authentication (PTA)**: Validates passwords against on-premises AD in real-time.
+  - **Federation (AD FS)**: Uses on-premises federation services for authentication.
+* **Seamless Single Sign-On (SSO):**
+  - Allows users to access cloud apps without re-entering credentials when on a corporate network.
+* **Health Monitoring:**
+  - Azure AD Connect Health provides monitoring and alerts for sync and authentication services.
+
+### 📌 How It Works
+* **Installation:**
+  - Azure AD Connect is installed on a server in the on-premises environment, typically a domain-joined server.
+* **Configuration:**
+  - Admins define synchronization rules, filtering (e.g., by OU), and authentication methods.
+* **Synchronization Process:**
+  - The tool periodically syncs changes from AD DS to Azure AD, ensuring consistency.
+* **Authentication Flow:**
+  - Depending on the configured method, authentication requests are either handled by Azure AD (PHS/PTA) or redirected to on-premises AD (Federation).
 
 ---
 
