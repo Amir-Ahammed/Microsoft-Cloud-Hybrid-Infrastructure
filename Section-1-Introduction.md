@@ -37,6 +37,8 @@ In today's digital world, **the cloud** is everywhere, and Microsoft stands as a
   - **Microsoft Defender (various products)**: A suite of security solutions to protect identities, endpoints, applications, email, and data.
   - **Microsoft Entra ID (formerly Azure AD) P1/P2**: Provides identity and access management, including features like Single Sign-On (SSO) and Multi-Factor Authentication (MFA) for M365 and other cloud apps.
 
+[↑ Back to Top](#)  <!-- Links to the very top of the page -->
+
 ---
 
 ### 🔷 Microsoft Azure: Your Global Cloud Computing Platform & Infrastructure <a name="1.2"></a>
@@ -80,6 +82,9 @@ In today's digital world, **the cloud** is everywhere, and Microsoft stands as a
   - **Azure DevOps**: Services for planning, building, testing, and deploying applications.
   - **GitHub & GitHub Actions**: Deep integration for source control and CI/CD.
 
+[↑ Back to Top](#)  <!-- Links to the very top of the page -->
+
+---
 
 ### 📌 Admin Portals You Should Know <a name="1.3"></a>
 
@@ -90,6 +95,8 @@ In today's digital world, **the cloud** is everywhere, and Microsoft stands as a
 | **Intune Admin Center**       | Device compliance, policies, and deployment         |
 | **Azure Portal**              | Manage all Azure resources (VMs, networks, storage) |
 | **Security & Compliance Center** | Data loss prevention, audit logs, security reports |
+
+[↑ Back to Top](#)  <!-- Links to the very top of the page -->
 
 ---
 
@@ -152,6 +159,8 @@ In today's digital world, **the cloud** is everywhere, and Microsoft stands as a
 * **Structure**:
   - Everything is organized in a hierarchy: **Forest** (top level) > **Trees** (if multiple related domain structures) > **Domains** (e.g., `sales.mycompany.com`) > **Organizational Units (OUs)** (e.g., `US_Sales_Team` OU). This allows for clear organization and targeted policy application.
 
+[↑ Back to Top](#)  <!-- Links to the very top of the page -->
+
 ---
 
 ### 🔷 What is a Domain in Active Directory? <a name="3.0"></a>
@@ -186,6 +195,9 @@ An Active Directory Domain is a logical grouping of users, computers, and device
 * **Resource Access**: The DC checks the user’s group memberships and permissions to grant/deny access to files, printers, or apps.
 * **Policy Enforcement**: GPOs from the domain or OU level apply settings (e.g., firewall rules, software deployments) to users/computers.
 * **Replication**: Changes (e.g., new user accounts) replicate between DCs to ensure consistency (typically every 15–30 seconds).
+
+[↑ Back to Top](#)  <!-- Links to the very top of the page -->
+
 ---
 
 ### 🔷 Active Directory Connect (Azure AD Connect) <a name="4.0"></a>
@@ -214,6 +226,8 @@ An Active Directory Domain is a logical grouping of users, computers, and device
 * **Authentication Flow:**
   - **PHS/PTA**: Cloud auth requests validated via synced hashes or on-premises AD.
   - **AD FS**: Redirects to on-premises federation service for auth.
+
+[↑ Back to Top](#)  <!-- Links to the very top of the page -->
 
 ---
 
@@ -244,3 +258,5 @@ Modern networks rely on secure remote access, perimeter defense, and virtualizat
   - **Type 2 (Hosted):** VirtualBox, VMware Workstation (for testing).
 * **Azure Virtual Machines:** IaaS VMs with scalable compute/storage.
 * **Containers:** Lightweight virtualization (e.g., Docker, Azure Kubernetes Service).
+
+[↑ Back to Top](#)  <!-- Links to the very top of the page -->
