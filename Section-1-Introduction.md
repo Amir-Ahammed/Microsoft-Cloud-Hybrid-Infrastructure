@@ -1,27 +1,3 @@
-# Jump To
-
-1. [Introduction to Microsoft 365 and Azure](#1.0)
-   - [Microsoft 365: Your Modern Workplace & Productivity Cloud](#1.1)
-   - [Key Components & Services (What's Inside)](#1.1.1)
-   - [Microsoft Azure: Your Global Cloud Computing Platform & Infrastructure](#1.2)
-   - [Key Service Categories & Examples](#1.2.1)
-   - [Admin Portals You Should Know](#1.3)
-2. [Microsoft Active Directory Domain Services (AD DS)](#2.0)
-   - [What is AD DS?](#2.1)
-   - [Key Features & Core Functions](#2.2)
-   - [How It Works](#2.3)
-3. [Domain in Active Directory](#3.0)
-   - [Key Features of an AD Domain](#3.1)
-   - [Core Components of an AD Domain](#3.2)
-   - [How It Works](#3.3)
-4. [Active Directory Connect (Azure AD Connect)](#4.0)
-   - [Key Features of Azure AD Connect](#4.1)
-   - [How It Works](#4.2)
-5. [Network Infrastructure Foundations: Remote Access, DMZs, and Virtualization](#5.0)
-   - [Remote Access](#5.1)
-   - [DMZs](#5.2)
-   - [Virtualization](#5.3)
----
 <details>
 <summary><b>📌 Jump To (Click to Expand)</b></summary>
 
@@ -35,10 +11,10 @@
 
 ---
 
-# 1. Introduction to Microsoft Cloud Solutions: Microsoft 365 and Azure <a name="1.0"></a>
+## 1. Introduction to Microsoft Cloud Solutions: Microsoft 365 and Azure <a name="1.0"></a>
 In today's digital world, **the cloud** is everywhere, and Microsoft stands as a giant in this space with two flagship offerings: **Microsoft 365** and **Microsoft Azure**. Together, they provide a vast array of tools and services that power businesses, individuals, and developers worldwide. Let's explore what they are and why they're considered a powerhouse.
 
-## 🔷 Microsoft 365: Your Modern Workplace & Productivity Cloud <a name="1.1"></a>
+### 🔷 Microsoft 365: Your Modern Workplace & Productivity Cloud <a name="1.1"></a>
 **What it is**: Think of Microsoft 365 (often called M365) as your **all-in-one digital toolkit for work, communication, and creativity, delivered from the cloud**. It's a subscription service that bundles familiar Office apps with powerful cloud services for collaboration, security, and device management. It's primarily a **SaaS (Software as a Service)** offering.
 
 ### 📌 Key Components & Services (What's Inside) <a name="1.1.1"></a>
@@ -63,7 +39,7 @@ In today's digital world, **the cloud** is everywhere, and Microsoft stands as a
 
 ---
 
-## 🔷 Microsoft Azure: Your Global Cloud Computing Platform & Infrastructure <a name="1.2"></a>
+### 🔷 Microsoft Azure: Your Global Cloud Computing Platform & Infrastructure <a name="1.2"></a>
 **What it is**: Think of Microsoft Azure as a **vast, global "digital construction yard"** or a **"supercomputer you can rent parts of."** It's a comprehensive cloud computing platform offering a massive collection of services that let you build, deploy, and manage applications and infrastructure. It provides **IaaS (Infrastructure as a Service), PaaS (Platform as a Service)**, and also some **SaaS** solutions.
 
 ### 📌 Key Service Categories & Examples (What You Can Build/Do): <a name="1.2.1"></a>
@@ -117,10 +93,10 @@ In today's digital world, **the cloud** is everywhere, and Microsoft stands as a
 
 ---
 
-# 2. Microsoft Active Directory Domain Services (AD DS) <a name="2.0"></a>
+## 2. Microsoft Active Directory Domain Services (AD DS) <a name="2.0"></a>
 **Microsoft Active Directory Domain Services (AD DS)** is a server role in Windows Server operating systems that allows administrators to manage and organize network resources. It provides a centralized and secure way to manage users, computers, and other network objects within an organization.
 
-## 🔷 What is AD DS? <a name="2.1"></a>
+### 🔷 What is AD DS? <a name="2.1"></a>
 **AD DS** is a **centralized database** that stores information about network resources. This includes:
 * **Users** (like employees, their usernames, passwords)
 * **Computers** (which machines are part of the network)
@@ -178,7 +154,7 @@ In today's digital world, **the cloud** is everywhere, and Microsoft stands as a
 
 ---
 
-## 🔷 What is a Domain in Active Directory? <a name="3.0"></a>
+### 🔷 What is a Domain in Active Directory? <a name="3.0"></a>
 An Active Directory Domain is a logical grouping of users, computers, and devices that share a centralized directory database and security policies. It serves as the core boundary for authentication, resource management, and policy enforcement in an on-premises network.
 
 ### 📌 Key Features of an AD Domain <a name="3.1"></a>
@@ -212,7 +188,7 @@ An Active Directory Domain is a logical grouping of users, computers, and device
 * **Replication**: Changes (e.g., new user accounts) replicate between DCs to ensure consistency (typically every 15–30 seconds).
 ---
 
-## 🔷 Active Directory Connect (Azure AD Connect) <a name="4.0"></a>
+### 🔷 Active Directory Connect (Azure AD Connect) <a name="4.0"></a>
 **Azure AD Connect** is Microsoft’s hybrid identity bridge, synchronizing on-premises **Active Directory Domain Services (AD DS)** with **Microsoft Entra ID (formerly Azure AD)**. It enables seamless access to both cloud and on-premises resources with a single identity.
 
 ### 📌 Key Features of Azure AD Connect <a name="4.1"></a>
@@ -241,7 +217,7 @@ An Active Directory Domain is a logical grouping of users, computers, and device
 
 ---
 
-# 3. Network Infrastructure Foundations: Remote Access, DMZs, and Virtualization <a name="5.0"></a>
+## 3. Network Infrastructure Foundations: Remote Access, DMZs, and Virtualization <a name="5.0"></a>
 Modern networks rely on secure remote access, perimeter defense, and virtualization to enable flexible, scalable, and protected IT environments. This section covers core concepts for enterprise infrastructure.
 
 
@@ -250,19 +226,19 @@ Modern networks rely on secure remote access, perimeter defense, and virtualizat
 * **Azure Firewall/Network Security Groups (NSGs)**
 * **Hyper-V/VMware Virtualization**
 
-### 📌 Remote Access  <a name="5.1"></a>
+### 🔷 Remote Access  <a name="5.1"></a>
 * **VPN (Virtual Private Network):**
   - Encrypted tunnels (e.g., IPSec, SSL VPN) for secure remote connections to corporate networks.
   - **Azure VPN Gateway:** Connects on-premises networks to Azure VNets.
 * **Remote Desktop Services (RDS):** Hosted virtual desktops/apps for remote workers.
 * **Zero Trust Models:** Verify-before-trust access (e.g., Azure AD Conditional Access).
-### 📌 DMZ (Demilitarized Zone) <a name="5.2"></a>
+### 🔷 DMZ (Demilitarized Zone) <a name="5.2"></a>
 * **Purpose:** Isolate public-facing services (e.g., web servers) from internal networks.
 * **Design:**
   - **Dual Firewalls:** Outer firewall filters inbound traffic; inner firewall protects internal networks.
   - **Azure DMZ:** Use **Azure Firewall + NSGs** to segment subnets.
 * **Services Hosted:** Web servers, proxy servers, mail relays.
-### 📌 Virtualization <a name="5.3"></a>
+### 🔷 Virtualization <a name="5.3"></a>
 * **Hypervisors**:
   - **Type 1 (Bare-metal):** VMware ESXi, Microsoft Hyper-V, Azure Stack HCI.
   - **Type 2 (Hosted):** VirtualBox, VMware Workstation (for testing).
