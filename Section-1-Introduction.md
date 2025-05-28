@@ -104,12 +104,6 @@ In today's digital world, **the cloud** is everywhere, and Microsoft stands as a
 | **Azure Portal**              | Manage all Azure resources (VMs, networks, storage) |
 | **Security & Compliance Center** | Data loss prevention, audit logs, security reports |
 
-### 📌 How It Works <a name="3.3"></a>
-* **User Authentication**: When a user logs in, their computer contacts a DC to verify credentials (via Kerberos/NTLM).
-* Resource Access:
-* Policy Enforcement:
-* Replication:
-
 ---
 
 # 2. Microsoft Active Directory Domain Services (AD DS) <a name="2.0"></a>
@@ -177,35 +171,47 @@ In today's digital world, **the cloud** is everywhere, and Microsoft stands as a
 An Active Directory Domain is a logical grouping of users, computers, and devices that share a centralized directory database and security policies. It serves as the core boundary for authentication, resource management, and policy enforcement in an on-premises network.
 
 ### 📌 Key Features of an AD Domain <a name="3.1"></a>
-* Centralized Management:
-* Security Boundary:
-* DNS Integration:
-* Hierarchical Structure:
-* Multi-Master Replication:
+* **Centralized Management**:
+  - All objects (users, computers, groups) are stored in a single directory database (`NTDS.dit`) hosted on **Domain Controllers (DCs)**.
+* **Security Boundary**:
+  - A domain defines a trust boundary where authentication and authorization are managed uniformly.
+  - Permissions and Group Policy Objects (GPOs) apply domain-wide unless overridden by finer-grained controls (e.g., OUs).
+* **DNS Integration**:
+  - Domains are identified by DNS names (e.g., `corp.company.com`).
+  - DNS is used to locate Domain Controllers and services (e.g., `_ldap._tcp.dc._msdcs.corp.company.com`).
+* **Hierarchical Structure**: 
+  - **Organizational Units (OUs)**: Subdivisions within a domain to delegate administration (e.g., `OU=Finance, DC=corp, DC=company, DC=com`).
+  - **Group Policy**: Policies can be targeted to domains, OUs, or specific groups.
+* **Multi-Master Replication**: Changes to the directory (e.g., new users) replicate automatically between all Domain Controllers in the domain.
 
 ### 📌 Core Components of an AD Domain <a name="3.2"></a>
 
 | Component                  | Description                                                                 |
 |----------------------------|-----------------------------------------------------------------------------|
-| **Domain Controller (DC)** | A server that stores the AD database and handles authentication and authorization |
-| **Users**                  | Individual accounts that authenticate to access resources on the network    |
-| **Computers**              | Devices that are joined to the domain for centralized control and policies  |
-| **Groups**                 | Logical collections of users or computers for easier permission management |
-| **Organizational Units (OUs)** | Containers for organizing AD objects and applying Group Policies        |
+| **Domain Controller (DC)** | Hosts the AD database (`NTDS.dit`) and handles authentication requests.     |
+| **Users**                  | Accounts and security groups (e.g., `Sales_Team`) for access management.    |
+| **Computers**              | Devices joined to the domain for centralized control via GPOs.              |
+| **DNS Server**             | Resolves domain names to IPs and locates DCs via SRV records.               |
+| **SYSVOL**                 | Shared folder storing GPOs, scripts, and login files replicated across DCs. |
 
+### 📌 How It Works <a name="3.3"></a>
+* **User Authentication**: When a user logs in, their computer contacts a DC to verify credentials (via Kerberos/NTLM).
+* **Resource Access**: The DC checks the user’s group memberships and permissions to grant/deny access to files, printers, or apps.
+* **Policy Enforcement**: GPOs from the domain or OU level apply settings (e.g., firewall rules, software deployments) to users/computers.
+* **Replication**: Changes (e.g., new user accounts) replicate between DCs to ensure consistency (typically every 15–30 seconds).
 ---
 
 ## 🔷 Active Directory Connect (Azure AD Connect) <a name="4.0"></a>
-Active Directory Connect (Azure AD Connect) is a crucial tool for integrating on-premises Active Directory Domain Services (AD DS) with Microsoft Entra ID (formerly Azure Active Directory). This enables hybrid identity scenarios where users can seamlessly access both on-premises and cloud resources with a single set of credentials.
+**Azure AD Connect** is Microsoft’s hybrid identity bridge, synchronizing on-premises **Active Directory Domain Services (AD DS)** with **Microsoft Entra ID (formerly Azure AD)**. It enables seamless access to both cloud and on-premises resources with a single identity.
 
 ### 📌 Key Features of Azure AD Connect <a name="4.1"></a>
 * **Synchronization:**
-  - Syncs user accounts, groups, and other objects from on-premises AD to Azure AD.
-  - Supports both one-way (on-premises to cloud) and writeback scenarios (e.g., password writeback).
+  - Syncs users, groups, and devices from AD DS to Entra ID (one-way or writeback).
+  - Filters objects by OU/attribute (e.g., exclude service accounts).
 * **Authentication Methods:**
-  - **Password Hash Synchronization (PHS)**: Syncs password hashes to Azure AD for authentication.
-  - **Pass-Through Authentication (PTA)**: Validates passwords against on-premises AD in real-time.
-  - **Federation (AD FS)**: Uses on-premises federation services for authentication.
+  - **Password Hash Synchronization (PHS)**: Hashes synced to Entra ID for cloud auth.
+  - **Pass-Through Authentication (PTA)**: Real-time validation against on-premises AD.
+  - **Federation (AD FS)**: Uses on-premises federation services for authentication. 
 * **Seamless Single Sign-On (SSO):**
   - Allows users to access cloud apps without re-entering credentials when on a corporate network.
 * **Health Monitoring:**
@@ -213,13 +219,14 @@ Active Directory Connect (Azure AD Connect) is a crucial tool for integrating on
 
 ### 📌 How It Works <a name="4.2"></a>
 * **Installation:**
-  - Azure AD Connect is installed on a server in the on-premises environment, typically a domain-joined server.
+  - Deployed on an on-premises server (domain-joined, typically Windows Server 2016+).
 * **Configuration:**
-  - Admins define synchronization rules, filtering (e.g., by OU), and authentication methods.
+  - Define sync scope (e.g., specific OUs), auth method (PHS/PTA/AD FS), and optional features (password writeback).
 * **Synchronization Process:**
-  - The tool periodically syncs changes from AD DS to Azure AD, ensuring consistency.
+  - Runs every 30 minutes by default (delta syncs for incremental changes).
 * **Authentication Flow:**
-  - Depending on the configured method, authentication requests are either handled by Azure AD (PHS/PTA) or redirected to on-premises AD (Federation).
+  - **PHS/PTA**: Cloud auth requests validated via synced hashes or on-premises AD.
+  - **AD FS**: Redirects to on-premises federation service for auth.
 
 ---
 
