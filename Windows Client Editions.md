@@ -190,7 +190,7 @@ Windows Enterprise is built for large organizations that need advanced security,
 - **Hardware Support**: Must align with the release’s supported silicon.
 - **Not for General Use**: LTSC is not recommended for mainstream desktops or laptops.
 
-### Windows 11 Pro vs Enterprise — Feature Comparison
+## Windows 11 Pro vs Enterprise — Feature Comparison
 
 | Feature / Capability                     | 💼 Windows 11 Pro             | 🏢 Windows 11 Enterprise         |
 |------------------------------------------|-------------------------------|----------------------------------|
