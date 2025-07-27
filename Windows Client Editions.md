@@ -1,4 +1,4 @@
-# Examine Windows client editions and capabilities
+# Examine Windows Client Editions and Capabilities
 Before installing Windows, it’s important to pick the edition that best fits your organization’s needs.
 > * Different users have different needs — from home users to big companies.
 > * Windows comes in multiple editions (like Home, Pro, Enterprise, etc.).
@@ -190,6 +190,36 @@ Windows Enterprise is built for large organizations that need advanced security,
 - **Hardware Support**: Must align with the release’s supported silicon.
 - **Not for General Use**: LTSC is not recommended for mainstream desktops or laptops.
 
+### Windows 11 Pro vs Enterprise — Feature Comparison
+
+| Feature / Capability                     | 💼 Windows 11 Pro             | 🏢 Windows 11 Enterprise         |
+|------------------------------------------|-------------------------------|----------------------------------|
+| **Base Edition**                         | Standalone OS                 | Requires Pro base + subscription |
+| **Target Audience**                      | SMBs, professionals           | Large organizations, IT teams   |
+| **BitLocker Drive Encryption**           | ✅ Included                   | ✅ Included                      |
+| **Remote Desktop Host**                  | ✅ Supported                  | ✅ Supported                     |
+| **Group Policy Management**              | ✅ Supported                  | ✅ Supported                     |
+| **Azure AD Join**                        | ✅ Supported                  | ✅ Supported                     |
+| **Windows Autopilot**                    | ✅ Supported                  | ✅ Supported                     |
+| **Windows Update for Business**          | ✅ Supported                  | ✅ Supported                     |
+| **AppLocker**                            | ❌ Not available              | ✅ Included                      |
+| **Credential Guard**                     | ❌ Not available              | ✅ Included                      |
+| **Microsoft Defender Application Guard** | ✅ Included                   | ✅ Included                      |
+| **Microsoft Defender for Endpoint**      | ❌ Not available              | ✅ Included (E5 license)         |
+| **Windows Autopatch**                    | ❌ Not available              | ✅ Included                      |
+| **Universal Print**                      | ❌ Not available              | ✅ Included                      |
+| **Microsoft Connected Cache**            | ❌ Not available              | ✅ Included                      |
+| **UE-V / App-V**                         | ❌ Not available              | ✅ Included                      |
+| **Enterprise State Roaming**             | ✅ Supported                  | ✅ Supported                     |
+| **Windows Experience Lockdown**          | ❌ Not available              | ✅ Included                      |
+| **Start Menu Layout Control**            | ✅ Basic                      | ✅ Advanced via policy           |
+| **Maximum RAM Support**                  | 2 TB                          | 6 TB                             |
+| **Maximum CPU Sockets**                  | 2                             | 4                                |
+| **Support Lifecycle**                    | 24 months                     | 36 months                        |
+| **LTSC Availability**                    | ❌ Not available              | ✅ Available                     |
+| **Licensing Model**                      | Retail / OEM                 | Volume Licensing / Microsoft 365 |
+
+
 ## Windows Pro Education, Education & SE — Feature Breakdown
 These editions are tailored for academic institutions, offering the same core features as **Windows Pro** and **Windows Enterprise**, respectively — but with **education-specific configurations** designed to reduce distractions and simplify management in school environments.
 
@@ -306,7 +336,7 @@ Windows IoT editions are designed for **fixed-purpose devices** like ATMs, kiosk
 | Management Tools            | Device Portal                     | Full enterprise management stack   |
 
 
-
+Learn more: https://learn.microsoft.com/en-us/training/modules/explore-windows-editions/2-examine-client-editions-capabilities
 
 
 
