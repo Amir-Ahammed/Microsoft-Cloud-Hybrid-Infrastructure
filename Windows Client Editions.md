@@ -15,9 +15,9 @@ Before installing Windows, it’s important to pick the edition that best fits y
 | Enterprise LTSC        | Enterprise with restrictive change requirements                                                     | Volume Licensing, Enterprise Agreement, or CSP programs                       |
 | Pro Education          | Comparable to Pro for school staff, administrators, teachers, and students                          | Available to academic Volume License customers                                |
 | Education              | Comparable to Enterprise for school staff, administrators, teachers, and students                   | Available to academic Volume License customers                                |
+| Windows SE             | K–8 student devices, cloud-first education environments                                             | Preinstalled on low-cost devices from OEMs (e.g., Surface Laptop SE)          |
 | IoT Core               | Small footprint devices (single-app scenarios)                                                      | OEM licensing only                                                            |
 | IoT Enterprise         | Embedded systems needing full Windows experience (Embedded systems, kiosks, ATMs, medical devices)  | OEM licensing via Microsoft partners                                          |
-| Windows SE             | K–8 student devices, cloud-first education environments                                             | Preinstalled on low-cost devices from OEMs (e.g., Surface Laptop SE)          |
 
 
 # Windows Edition Details
@@ -189,6 +189,121 @@ Windows Enterprise is built for large organizations that need advanced security,
 - **No Office 365 Support**: Must use Office 2019 or other perpetual versions.
 - **Hardware Support**: Must align with the release’s supported silicon.
 - **Not for General Use**: LTSC is not recommended for mainstream desktops or laptops.
+
+## Windows Pro Education, Education & SE — Feature Breakdown
+These editions are tailored for academic institutions, offering the same core features as **Windows Pro** and **Windows Enterprise**, respectively — but with **education-specific configurations** designed to reduce distractions and simplify management in school environments.
+
+### Windows Pro Education
+> Based on Windows Pro
+- **Education-specific default settings**:
+  - Cortana disabled
+  - Tips, tricks, and Microsoft Store suggestions turned off
+- **Group Policy & MDM support**
+- **Domain Join & Azure AD Join**
+- **BitLocker & Remote Desktop**
+- **Microsoft Store for Education**
+- **Assigned Access & Kiosk Mode**
+- **Windows Update for Business**
+- **Available via Academic Volume Licensing**
+
+### Windows Education
+> Based on Windows Enterprise
+- Includes all Enterprise features **except LTSC**
+- **Education-specific defaults**:
+  - Cortana disabled
+  - Reduced distractions (tips, suggestions, etc.)
+- **AppLocker & Credential Guard**
+- **Take a Test app** for secure assessments
+- **UE-V & App-V support**
+- **Enterprise State Roaming**
+- **Advanced security and deployment tools**
+- **Available via Academic Volume Licensing**
+
+### Windows 11 SE
+- **Cloud-first edition for K–8 students**
+- **Simplified UI**:
+  - Full-screen app launch
+  - No Widgets or Microsoft Store
+  - Snap Layouts limited to side-by-side
+- **App Restrictions**:
+  - Only allowlisted apps via Intune for Education
+  - No local installs by students
+- **Preinstalled Microsoft 365 apps**:
+  - Word, Excel, PowerPoint, OneNote, OneDrive
+- **Deployment**:
+  - OEM preinstalled only (e.g., Surface Laptop SE)
+  - Managed via Intune for Education
+- **Ideal for**: Low-cost student laptops in primary education
+
+### Feature Comparison Table
+
+| Feature / Capability              | 🧑‍🏫 Pro Education     | 🎓 Education           | 🧒 Windows 11 SE       |
+|----------------------------------|------------------------|------------------------|------------------------|
+| Base Edition                     | Windows Pro            | Windows Enterprise     | Custom cloud-first     |
+| Target Audience                  | Teachers & staff       | Higher ed institutions | K–8 students           |
+| App Installation Flexibility     | ✅ Full control         | ✅ Full control         | ❌ Restricted          |
+| Microsoft Store Access           | ✅ Available            | ✅ Available            | ❌ Not available       |
+| Management Tools                 | Group Policy / Intune  | Group Policy / Intune  | Intune for Education   |
+| UI Customizations                | Standard Windows UI    | Standard Windows UI    | Simplified UI          |
+| Offline Microsoft 365 Apps       | ❌ Not preinstalled     | ❌ Not preinstalled     | ✅ Preinstalled         |
+| LTSC Support                     | ❌ No                   | ❌ No                   | ❌ No                   |
+| AppLocker / Credential Guard     | ❌ Limited              | ✅ Supported            | ❌ Not supported        |
+| Take a Test App                  | ✅ Included             | ✅ Included             | ❌ Not included         |
+| Deployment Method                | Volume Licensing        | Volume Licensing        | OEM only               |
+
+## Windows IoT Core & IoT Enterprise — Feature Breakdown
+Windows IoT editions are designed for **fixed-purpose devices** like ATMs, kiosks, POS terminals, and industrial controllers. They offer enterprise-grade security and manageability, but differ in scope and capabilities.
+
+### Windows IoT Core
+- **Lightweight OS** for single-purpose devices
+- Runs **one foreground UWP app** at a time
+- **No Windows Shell** (headless or minimal UI)
+- **Low resource footprint** (256MB RAM, 2GB storage)
+- Ideal for:
+  - Smart home devices
+  - IoT gateways
+  - Digital signage
+  - Raspberry Pi projects
+- **Security features**:
+  - Secure Boot
+  - BitLocker
+  - TPM support
+- **Remote management** via Windows Device Portal
+- **Royalty-free** for device makers
+- **No LTSC** — updates managed by OEM
+
+### Windows IoT Enterprise
+> Full Windows Enterprise experience
+- Supports **Win32, UWP, and desktop shell**
+- Advanced lockdown features:
+  - Assigned Access
+  - Shell Launcher
+  - Unified Write Filter (UWF)
+- Ideal for:
+  - POS systems
+  - ATMs
+  - Medical devices
+  - Industrial automation
+- **Security & management**:
+  - Credential Guard
+  - AppLocker
+  - Device Guard
+  - Enterprise State Roaming
+- **LTSC support** (10-year lifecycle)
+- Licensed via **OEM agreements**
+- Can be configured like standard Enterprise edition
+
+### Key Differences
+
+| Feature                     | IoT Core                          | IoT Enterprise                     |
+|-----------------------------|-----------------------------------|------------------------------------|
+| UI                          | Headless / single UWP app         | Full Windows Shell                 |
+| App Support                 | UWP only                          | UWP + Win32 + legacy apps         |
+| Device Type                 | Low-cost, low-power               | High-function embedded systems     |
+| Licensing                   | Royalty-free for OEMs             | OEM licensing with restrictions    |
+| LTSC Availability           | ❌ No                             | ✅ Yes                             |
+| Security Features           | Basic (TPM, BitLocker)            | Advanced (AppLocker, Credential Guard) |
+| Management Tools            | Device Portal                     | Full enterprise management stack   |
 
 
 
