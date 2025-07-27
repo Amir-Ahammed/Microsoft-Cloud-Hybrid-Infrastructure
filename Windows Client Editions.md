@@ -121,35 +121,43 @@ Windows Pro for Workstations is built for professionals handling **advanced work
 Windows Enterprise is built for large organizations that need **advanced security**, **centralized management**, and **scalable deployment**. It includes all features of Windows Pro, plus enterprise-grade enhancements.
 >  Includes All Windows Pro Features
 
-### Security Features
+## Security Features
 - **Microsoft Defender Credential Guard**: Protects credentials by isolating them using virtualization.
 - **Microsoft Defender Application Control (WDAC)**: Blocks unauthorized or unknown applications from running.
 - **Microsoft Defender Application Guard**: Runs untrusted websites in isolated containers.
 - **Personal Data Encryption (PDE)**: Encrypts files using user credentials tied to Windows Hello.
+- **AppLocker**: Controls which apps and files users can run using rules based on publisher, path, or file hash.
+- **Windows Hello for Business**: Provides passwordless authentication using biometrics and PIN backed by TPM.
 
-### Deployment & Management
+## Deployment & Management
 - **Windows Autopatch**: Automatically updates Microsoft products with minimal IT involvement.
 - **Universal Print**: Cloud-based printing without local servers or drivers.
 - **Microsoft Connected Cache**: Locally caches update files to reduce internet bandwidth.
 - **Endpoint Analytics & Organizational Messages**: Monitors device health and sends customized messages via Intune.
+- **Configuration Service Providers (CSPs)**: Interfaces used by MDM tools to configure and manage Windows settings.
 
-### Virtualization & Licensing
+## Virtualization & Licensing
 - **App-V (Application Virtualization)**: Delivers apps in virtual containers, reducing conflicts.
 - **UE-V (User Experience Virtualization)**: Syncs user settings across multiple devices.
 - **License Rights**: Allows virtual desktop access and edition upgrades via cloud activation.
 
-### Networking & Access
+## Networking & Access
 - **BranchCache**: Caches remote content locally to improve access speed.
-- **DirectAccess**: Provides seamless network connectivity without traditional VPN; can be replaced with Always On VPN.
+- **DirectAccess**: Provides seamless network connectivity without traditional VPN.
+- **Remote Credential Guard**: Redirects Kerberos requests to the client to protect credentials during RDP sessions.
 
-### Experience Customization
+## Experience Customization
 - **Start Menu Layout Control**: Customizes and locks Start menu layout via Group Policy or MDM.
 - **Windows Experience Lockdown**: Restricts features like clipboard sharing and screen capture.
+- **Granular Device Control**: Enables precise control over USBs, printers, and other peripherals using policies.
 
-### Support & Lifecycle
-- **36-Month Support**: Extended lifecycle for feature updates.
-- **LTSC Option**: Long-term servicing channel for stable deployments.
+## Resilience & Recovery
+- **Remote Remediation (Quick Machine Recovery)**: Automatically detects and fixes boot-critical issues using cloud-based recovery.
 - **Hotpatch**: Delivers security updates without rebooting.
+- **LTSC Option**: Long-term servicing channel for stable deployments.
+- **36-Month Support**: Extended lifecycle for feature updates.
+
+
 
 
 
