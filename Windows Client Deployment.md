@@ -4,7 +4,7 @@
 Microsoft Intune is a cloud-based endpoint management solution that helps organizations manage and secure Windows devices. It enables automated deployment, configuration, and compliance enforcement for Windows clients across hybrid or fully cloud environments.
 
 ---
-<details> <summary># 🧩 Autopilot registration process</summary>summary>
+<details> <summary>🧩 Autopilot registration process</summary>summary>
 
 Your company uses Microsoft Intune to manage Windows devices. After purchasing laptops, you can register them in Intune using **Windows Autopilot**. There are two trusted paths: **Vendor Upload** and **IT Admin Upload**.
 
