@@ -4,6 +4,79 @@
 Microsoft Intune is a cloud-based endpoint management solution that helps organizations manage and secure Windows devices. It enables automated deployment, configuration, and compliance enforcement for Windows clients across hybrid or fully cloud environments.
 
 ---
+<details> <summary># 🧩 Autopilot registration process</summary>summary>
+
+Your company uses Microsoft Intune to manage Windows devices. After purchasing laptops, you can register them in Intune using **Windows Autopilot**. There are two trusted paths: **Vendor Upload** and **IT Admin Upload**.
+
+---
+
+## ✅ 1. Vendor Upload (OEM or Reseller)
+
+**Best for:** Bulk purchases from authorized vendors like Dell, HP, Lenovo, etc.
+
+### What You Provide
+- **Tenant ID** (GUID format)
+- **Tenant Domain** (e.g., `company.onmicrosoft.com`)
+
+### What Vendor Does
+- Extract hardware hashes from each device.
+- Upload them to your Autopilot tenant via Microsoft’s OEM portal or Partner Center API.
+- Optionally assign:
+  - `Group Tag` (for profile targeting)
+  - `Order ID`
+  - `Assigned User`
+
+> 📦 Devices arrive pre-registered and ready for Autopilot provisioning.
+
+---
+
+## 🛠 2. IT Admin Upload (Manual or Scripted)
+
+**Best for:** Internal setup, lab devices, or when vendor upload isn’t available.
+
+### Steps to Collect and Upload Hardware Hash
+
+1. Boot the device into Windows.
+2. Run PowerShell to extract the hardware hash:
+   ```powershell
+   md c:\HWID
+   Set-Location c:\HWID
+   Install-Script -Name Get-WindowsAutopilotInfo
+   Get-WindowsAutopilotInfo -OutputFile AutopilotHWID.csv
+</details>
+
+<details>
+  <summary>🧭 Intune Enrollment Methods: Before Deployment Scenarios</summary>
+
+  Microsoft Intune supports multiple ways to register and manage Windows devices, depending on your environment and goals.
+
+  ### 🔐 Enrollment Options
+
+  | Method                        | Best For                          | Trigger Type         |
+  |------------------------------|-----------------------------------|----------------------|
+  | **Windows Autopilot**        | New corporate devices             | Hardware hash upload |
+  | **Azure AD Join + MDM Auto-enrollment** | Cloud-first environments         | Automatic            |
+  | **Hybrid Azure AD Join + GPO** | On-prem AD + Intune              | Automatic via GPO    |
+  | **Company Portal App**       | BYOD or manual enrollment         | User-initiated       |
+  | **Provisioning Package (PPKG)** | Offline or bulk setup             | Admin-initiated      |
+  | **Co-management (SCCM + Intune)** | Existing SCCM-managed devices     | Admin-initiated      |
+
+  ### 🧩 Key Scenarios
+
+  - **BYOD (Bring Your Own Device):**  
+    Users install the **Company Portal app**, sign in with their work account, and manually enroll.
+
+  - **Hybrid Azure AD Join + GPO:**  
+    Devices joined to on-prem AD can be auto-enrolled into Intune using **Group Policy** and **Azure AD Connect**.
+
+  - **Offline Provisioning:**  
+    Use **PPKG files** created with Windows Configuration Designer to enroll devices without internet during setup.
+
+  - **Co-management:**  
+    Organizations using **SCCM** can enable co-management to gradually shift workloads to Intune.
+
+</details>
+
 
 ## 🚀 Deployment Scenarios
 ### 1. **Azure AD Join (Cloud-Only)**
