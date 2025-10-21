@@ -4,6 +4,71 @@
 Microsoft Intune is a cloud-based endpoint management solution that helps organizations manage and secure Windows devices. It enables automated deployment, configuration, and compliance enforcement for Windows clients across hybrid or fully cloud environments.
 
 ---
+<details> 
+  <summary>🚀 Intune Device Lifecycle Workflow</summary>
+This guide outlines the complete process for onboarding and managing Windows devices using Microsoft Intune and Windows Autopilot.
+
+---
+
+## 🧾 Step 1: Register
+
+> Add devices to your Autopilot tenant so they can be identified and provisioned.
+
+- Vendor or IT admin uploads **hardware hashes**.
+- Devices appear in **Intune > Windows Autopilot devices**.
+- Assign Autopilot profiles and group tags.
+
+---
+
+## ⚙️ Step 2: Deploy
+
+> Prepare the device with OS, apps, and policies before the user starts using it.
+
+- User unboxes the laptop and connects to Wi-Fi.
+- Autopilot applies:
+  - Azure AD Join or Hybrid Join
+  - Apps, policies, and branding
+- Device is provisioned automatically.
+
+---
+
+## 🔐 Step 3: Enroll
+
+> Connect the device to Intune so it can be managed.
+
+- Device **auto-enrolls** into Intune during deployment.
+- Appears in **Intune > Devices**.
+- Starts receiving compliance policies, config profiles, and apps.
+
+---
+
+## 🛡️ Step 4: Manage
+
+> Use Intune to monitor, secure, and control the device throughout its lifecycle.
+
+- Push updates, apps, and security settings.
+- Monitor compliance, health, and inventory.
+- Perform remote actions:
+  - Wipe
+  - Retire
+  - Restart
+  - Remote assist
+
+---
+
+## 🔁 Summary Flow
+
+```text
+Register (Autopilot hash upload)
+   ↓
+Deploy (Autopilot profile applies setup)
+   ↓
+Enroll (Device joins Intune)
+   ↓
+Manage (Ongoing control via Intune)
+
+</details>
+
 <details> <summary>🧩 Autopilot registration process</summary>
 
 Your company uses Microsoft Intune to manage Windows devices. After purchasing laptops, you can register them in Intune using **Windows Autopilot**. There are two trusted paths: **Vendor Upload** and **IT Admin Upload**.
