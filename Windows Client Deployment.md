@@ -112,8 +112,8 @@ Your company uses Microsoft Intune to manage Windows devices. After purchasing l
 - Joining the device to **Azure AD** or **Hybrid AD**
 
 ### 🧭 When It Happens:
-<details>
-  <summary>Out-of-Box Experience (OOBE)</summary>
+<details> <summary>Out-of-Box Experience (OOBE)</summary>
+<br>
 
 - The device boots into a guided setup screen.
 - The user selects:
@@ -129,10 +129,10 @@ Your company uses Microsoft Intune to manage Windows devices. After purchasing l
 
 </details>
 
-<details>
-  <summary>Or via Pre-provisioning (White Glove)</summary>
-
-  Pre-provisioning allows IT to fully configure a Windows Autopilot device **before handing it to the end user**. It speeds up deployment by applying apps, policies, and settings in advance.
+<details> <summary>Or via Pre-provisioning (White Glove)</summary>
+<br>
+  
+Pre-provisioning allows IT to fully configure a Windows Autopilot device **before handing it to the end user**. It speeds up deployment by applying apps, policies, and settings in advance.
 
 - IT boots the device into Out-of-Box Experience (OOBE)
 - Connects to Wi-Fi or Ethernet
@@ -152,6 +152,7 @@ Your company uses Microsoft Intune to manage Windows devices. After purchasing l
 
 ### 🧩 Deployment Methods:
 <details> <summary>1️⃣ User-Driven Autopilot</summary>
+<br>
 
 > Best for: Employee laptops and personal-use corporate devices
 
@@ -176,6 +177,7 @@ Your company uses Microsoft Intune to manage Windows devices. After purchasing l
 </details>
 
 <details> <summary>2️⃣ Self-Deploying Autopilot</summary>
+<br>
 
 > Best for: Kiosks, shared devices, digital signage
 
@@ -197,6 +199,7 @@ Your company uses Microsoft Intune to manage Windows devices. After purchasing l
 </details>
 
 <details> <summary> 3️⃣ Pre-Provisioned Autopilot (White Glove)</summary>
+<br>
 
 > Best for: IT pre-staging devices before handoff to users
 
@@ -218,6 +221,7 @@ Your company uses Microsoft Intune to manage Windows devices. After purchasing l
 </details>
 
 <details> <summary> 4️⃣ Provisioning Package (PPKG)</summary>
+<br>
 
 > Best for: Offline or bulk setup without internet
 
