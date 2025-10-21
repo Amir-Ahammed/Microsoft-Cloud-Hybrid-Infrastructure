@@ -13,7 +13,7 @@ Microsoft Intune is a cloud-based endpoint management solution that helps organi
 
 ---
 
-## 🚀 Intune Device Lifecycle Workflow
+## 🚀 Device Lifecycle Workflow
 The complete process for onboarding and managing Windows devices using Microsoft Intune and Windows Autopilot.
 
 <details> <summary>🧾 Step 1: Register</summary>
