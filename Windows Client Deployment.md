@@ -280,7 +280,7 @@ Pre-provisioning allows IT to fully configure a Windows Autopilot device **befor
 
 ### 🧩 Enrollment Methods:
 - **Autopilot Enrollment**
-- **Azure AD Join + Auto-enroll**
+- **Azure AD Join + MDM Auto-enroll**
 - **Hybrid Azure AD Join + GPO**
 - **Company Portal App**
 - **Provisioning Package (PPKG)**
@@ -298,6 +298,52 @@ Pre-provisioning allows IT to fully configure a Windows Autopilot device **befor
 ```
 
 
+# 📘 Alternative Deployment & Enrollment Methods (Outside Autopilot)
+
+These are alternative ways to deploy and enroll devices into Microsoft Intune, especially when Autopilot is not used or feasible.
+
+---
+
+## 1️⃣ Manual Enrollment
+
+> Used for: BYOD (Bring Your Own Device) or small-scale setups
+
+<details>
+  <summary>🔧 How It Works</summary>
+
+- User goes to: Settings > Accounts > Access work or school > Connect
+- Signs in with their **work or school account**
+- Device joins **Azure AD**
+- Device automatically **enrolls into Intune**
+- No Autopilot involvement
+
+</details>
+
+---
+
+## 2️⃣ Group Policy Enrollment
+
+> Used for: Domain-joined devices in hybrid environments
+
+<details>
+<summary>🔧 How It Works</summary>
+
+- Admin configures **Group Policy Object (GPO)**:
+- Enable **automatic MDM enrollment**
+- Set **MDM service URL**:
+  ```
+  https://enrollment.manage.microsoft.com/enrollmentserver/discovery.aspx
+  ```
+- Device joins **on-premises Active Directory**
+- **Azure AD Connect** syncs the device to Azure AD
+- Device automatically **enrolls into Intune via GPO**
+- No Autopilot required
+
+</details>
+
+---
+
+> ✅ These methods are ideal for environments where Autopilot is not available, or for legacy and BYOD scenarios.
 
 
 
