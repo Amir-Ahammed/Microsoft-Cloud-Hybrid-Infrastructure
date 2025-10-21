@@ -64,7 +64,7 @@ Your company uses Microsoft Intune to manage Windows devices. After purchasing l
 
 ---
 
-## ✅ 1. Vendor Upload (OEM or Reseller)
+### ✅ 1. Vendor Upload (OEM or Reseller)
 
 **Best for:** Bulk purchases from authorized vendors like Dell, HP, Lenovo, etc.
 
@@ -84,7 +84,7 @@ Your company uses Microsoft Intune to manage Windows devices. After purchasing l
 
 ---
 
-## 🛠 2. IT Admin Upload (Manual or Scripted)
+### 🛠 2. IT Admin Upload (Manual or Scripted)
 
 **Best for:** Internal setup, lab devices, or when vendor upload isn’t available.
 
