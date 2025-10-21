@@ -10,7 +10,7 @@ This guide outlines the complete process for onboarding and managing Windows dev
 
 ---
 
-## 🧾 Step 1: Register
+### 🧾 Step 1: Register
 
 > Add devices to your Autopilot tenant so they can be identified and provisioned.
 
@@ -20,7 +20,7 @@ This guide outlines the complete process for onboarding and managing Windows dev
 
 ---
 
-## ⚙️ Step 2: Deploy
+### ⚙️ Step 2: Deploy
 
 > Prepare the device with OS, apps, and policies before the user starts using it.
 
@@ -32,7 +32,7 @@ This guide outlines the complete process for onboarding and managing Windows dev
 
 ---
 
-## 🔐 Step 3: Enroll
+### 🔐 Step 3: Enroll
 
 > Connect the device to Intune so it can be managed.
 
@@ -42,7 +42,7 @@ This guide outlines the complete process for onboarding and managing Windows dev
 
 ---
 
-## 🛡️ Step 4: Manage
+### 🛡️ Step 4: Manage
 
 > Use Intune to monitor, secure, and control the device throughout its lifecycle.
 
@@ -55,18 +55,6 @@ This guide outlines the complete process for onboarding and managing Windows dev
   - Remote assist
 
 ---
-
-## 🔁 Summary Flow
-
-```text
-Register (Autopilot hash upload)
-   ↓
-Deploy (Autopilot profile applies setup)
-   ↓
-Enroll (Device joins Intune)
-   ↓
-Manage (Ongoing control via Intune)
-```
 
 </details>
 
