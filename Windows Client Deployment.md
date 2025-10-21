@@ -99,13 +99,8 @@ Your company uses Microsoft Intune to manage Windows devices. After purchasing l
    Get-WindowsAutopilotInfo -OutputFile AutopilotHWID.csv
 </details>
 
-# 📘 Deployment & Enrollment in Intune
 
-Understanding the difference between **deployment** and **enrollment** is essential for managing Windows devices with Microsoft Intune and Autopilot.
-
----
-
-## 🚀 What Is Deployment?
+## 🚀 Deployment
 
 > Deployment is the process of preparing and configuring a device before the user starts using it.
 
