@@ -66,6 +66,8 @@ The complete process for onboarding and managing Windows devices using Microsoft
 
 </details>
 
+---
+
 ## 🧩 Autopilot registration
 
 Company uses Microsoft Intune to manage Windows devices. After purchasing laptops, you can register them in Intune using **Windows Autopilot**. There are two trusted paths: **Vendor Upload** and **IT Admin Upload**.
@@ -109,6 +111,7 @@ Company uses Microsoft Intune to manage Windows devices. After purchasing laptop
 
 </details>
 
+---
 
 ## 🚀 Deployment
 
