@@ -346,7 +346,21 @@ These are alternative ways to deploy and enroll devices into Microsoft Intune, e
 > ✅ These methods are ideal for environments where Autopilot is not available, or for legacy and BYOD scenarios.
 
 
+---
 
+## 🛡️ Post-Enrollment Configuration
+
+> Once enrolled, devices receive policies, apps, and compliance settings.
+
+### ✅ Actions:
+- Assign **Configuration Profiles** (Wi-Fi, VPN, BitLocker, Defender)
+- Deploy **Applications** (Win32, Store, LOB)
+- Apply **Compliance Policies** (password, encryption, antivirus)
+- Monitor via **Intune > Devices**
+- Use **Endpoint Analytics** for performance insights
+- Perform remote actions: Wipe, Retire, Restart, Rename
+
+---
 
 
 
@@ -626,21 +640,7 @@ This guide maps out the full lifecycle of Windows device management using Micros
 | **Provisioning Package (PPKG)**      | Offline bulk setup                       | Admin-initiated       |
 | **Co-management (SCCM + Intune)**    | Existing SCCM-managed devices            | Admin-initiated       |
 
----
 
-## 🛡️ Phase 4: Post-Enrollment Configuration
-
-> Once enrolled, devices receive policies, apps, and compliance settings.
-
-### ✅ Actions:
-- Assign **Configuration Profiles** (Wi-Fi, VPN, BitLocker, Defender)
-- Deploy **Applications** (Win32, Store, LOB)
-- Apply **Compliance Policies** (password, encryption, antivirus)
-- Monitor via **Intune > Devices**
-- Use **Endpoint Analytics** for performance insights
-- Perform remote actions: Wipe, Retire, Restart, Rename
-
----
 
 ## 🧠 Real-World Example Matrix
 
