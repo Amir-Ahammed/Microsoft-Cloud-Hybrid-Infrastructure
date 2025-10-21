@@ -46,7 +46,7 @@ Your company uses Microsoft Intune to manage Windows devices. After purchasing l
 </details>
 
 <details>
-  <summary>🧭 Intune Enrollment Methods: Before Deployment Scenarios</summary>
+  <summary>🧭 Intune Enrollment Methods</summary>
 
   Microsoft Intune supports multiple ways to register and manage Windows devices, depending on your environment and goals.
 
