@@ -115,7 +115,7 @@ Company uses Microsoft Intune to manage Windows devices. After purchasing laptop
 
 ## 🚀 Deployment
 
-> Deployment is the process of preparing and configuring a device before the user starts using it.
+Deployment is the process of preparing and configuring a device before the user starts using it.
 
 ### 🔧 Deployment Includes:
 - Applying **Autopilot profiles**
