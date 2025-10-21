@@ -48,7 +48,7 @@ Your company uses Microsoft Intune to manage Windows devices. After purchasing l
 <details>
   <summary>🧭 Intune Enrollment Methods: How a device actually connects to Intune and becomes manageable.</summary>
 
-  Microsoft Intune supports multiple ways to register and manage Windows devices, depending on your environment and goals.
+  So once the device is registered (via vendor or admin), it still needs to enroll into Intune. Microsoft Intune supports multiple ways to register and manage Windows devices, depending on your environment and goals.
 
   ### 🔐 Enrollment Options
 
