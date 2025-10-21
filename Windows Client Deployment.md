@@ -1,1 +1,122 @@
+# 🖥️ Windows Client Deployment using Microsoft Intune
+
+## 📘 Overview
+Microsoft Intune is a cloud-based endpoint management solution that helps organizations manage and secure Windows devices. It enables automated deployment, configuration, and compliance enforcement for Windows clients across hybrid or fully cloud environments.
+
+---
+
+## 🚀 Deployment Scenarios
+### 1. **Azure AD Join (Cloud-Only)**
+- Devices are joined directly to Azure Active Directory.
+- Ideal for cloud-first environments.
+- Managed entirely via Intune.
+
+### 2. **Hybrid Azure AD Join**
+- Devices are joined to on-premises AD and registered in Azure AD.
+- Suitable for organizations using both on-prem and cloud resources.
+- Requires Azure AD Connect.
+
+### 3. **Autopilot Deployment**
+- Simplifies the Windows device setup process.
+- Prepares devices with custom configurations, apps, and policies.
+- User-driven or pre-provisioned setups available.
+
+---
+
+## ⚙️ Prerequisites
+- Microsoft Intune subscription (part of Microsoft 365 E3/E5 or EMS).
+- Azure AD Premium license.
+- Windows 10/11 Enterprise or Pro edition.
+- Internet connectivity for devices.
+- Hardware ID registration for Autopilot (via OEM or script).
+
+---
+
+## 🧩 Deployment Methods
+### 1. **Windows Autopilot**
+- Zero-touch provisioning for new devices.
+- Profiles can include:
+  - Device naming convention.
+  - Out-of-Box Experience (OOBE) customization.
+  - User or device-based enrollment settings.
+
+### 2. **Manual Enrollment**
+- Users manually enroll via **Settings → Accounts → Access work or school**.
+- Used for BYOD or small-scale deployments.
+
+### 3. **Group Policy Enrollment**
+- For domain-joined devices using GPO to auto-enroll into Intune.
+
+---
+
+## 🛠️ Configuration Steps
+
+### Step 1: Prepare Intune
+- Create device groups in **Microsoft Endpoint Manager (MEM) Admin Center**.
+- Configure **Enrollment restrictions** and **Device categories**.
+
+### Step 2: Create Autopilot Profile
+- Navigate to:
+  **Devices → Windows → Windows enrollment → Deployment Profiles**
+- Define settings like:
+  - User account type (Standard/Admin)
+  - Skip privacy setup
+  - Automatically join Azure AD
+
+### Step 3: Assign Profile to Devices
+- Import hardware hash or assign by device group.
+
+### Step 4: Configure Device Policies
+- Examples:
+  - **Compliance policies** → Require BitLocker, PIN, or password.
+  - **Configuration profiles** → Deploy Wi-Fi, VPN, or Endpoint Protection.
+  - **Windows Update rings** → Manage OS updates and restart behavior.
+
+### Step 5: Deploy Applications
+- Add and assign apps (Win32, MSI, Microsoft Store, or LOB apps).
+- Assign to user or device groups.
+
+### Step 6: Test & Monitor
+- Use **Endpoint analytics** and **Device compliance reports**.
+- Verify deployment success, policy status, and app installation.
+
+---
+
+## 🔐 Security & Compliance
+- Enforce **Conditional Access** based on device compliance.
+- Apply **BitLocker encryption** and **Defender for Endpoint** integration.
+- Monitor device health and security posture in Intune dashboard.
+
+---
+
+## 🧾 Best Practices
+- Test deployment profiles with pilot users.
+- Use dynamic groups for automated targeting.
+- Document Autopilot profiles and version control.
+- Monitor using Intune’s **Endpoint Security** and **Reports**.
+
+---
+
+## 📊 Monitoring & Reporting
+- **Devices → Monitor** for enrollment status and compliance.
+- **Endpoint Analytics** for performance insights.
+- Export reports for audit and compliance tracking.
+
+---
+
+## 🧠 Summary
+| Area | Key Function |
+|------|---------------|
+| Enrollment | Azure AD Join / Autopilot / GPO |
+| Configuration | Policies & Profiles |
+| Application Deployment | Win32, Store, LOB apps |
+| Security | BitLocker, Defender, Conditional Access |
+| Monitoring | Compliance reports & Endpoint Analytics |
+
+---
+
+## 📚 References
+- [Microsoft Intune Documentation](https://learn.microsoft.com/mem/intune/)
+- [Windows Autopilot Overview](https://learn.microsoft.com/mem/autopilot/)
+- [Azure AD Join Guide](https://learn.microsoft.com/azure/active-directory/devices/concept-azure-ad-join)
 
