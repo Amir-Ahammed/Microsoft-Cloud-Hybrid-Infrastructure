@@ -4,13 +4,20 @@
 Microsoft Intune is a cloud-based endpoint management solution that helps organizations manage and secure Windows devices. It enables automated deployment, configuration, and compliance enforcement for Windows clients across hybrid or fully cloud environments.
 
 ---
-<details> 
-  <summary>🚀 Intune Device Lifecycle Workflow</summary>
-This guide outlines the complete process for onboarding and managing Windows devices using Microsoft Intune and Windows Autopilot.
+## ⚙️ Prerequisites
+- Microsoft Intune subscription (part of Microsoft 365 E3/E5 or EMS).
+- Azure AD Premium license.
+- Windows 10/11 Enterprise or Pro edition.
+- Internet connectivity for devices.
+- Hardware ID registration for Autopilot (via OEM or script).
 
 ---
 
-### 🧾 Step 1: Register
+## 🚀 Intune Device Lifecycle Workflow
+The complete process for onboarding and managing Windows devices using Microsoft Intune and Windows Autopilot.
+
+<details> <summary>🧾 Step 1: Register</summary>
+<br>
 
 > Add devices to your Autopilot tenant so they can be identified and provisioned.
 
@@ -18,9 +25,10 @@ This guide outlines the complete process for onboarding and managing Windows dev
 - Devices appear in **Intune > Windows Autopilot devices**.
 - Assign Autopilot profiles and group tags.
 
----
+</details>
 
-### ⚙️ Step 2: Deploy
+<details> <summary>⚙️ Step 2: Deploy</summary>
+<br> 
 
 > Prepare the device with OS, apps, and policies before the user starts using it.
 
@@ -30,9 +38,10 @@ This guide outlines the complete process for onboarding and managing Windows dev
   - Apps, policies, and branding
 - Device is provisioned automatically.
 
----
+</details>
 
-### 🔐 Step 3: Enroll
+<details> <summary>🔐 Step 3: Enroll</summary>
+<br>
 
 > Connect the device to Intune so it can be managed.
 
@@ -40,9 +49,10 @@ This guide outlines the complete process for onboarding and managing Windows dev
 - Appears in **Intune > Devices**.
 - Starts receiving compliance policies, config profiles, and apps.
 
----
+</details>
 
-### 🛡️ Step 4: Manage
+<details> <summary>🛡️ Step 4: Manage</summary>
+<br>
 
 > Use Intune to monitor, secure, and control the device throughout its lifecycle.
 
@@ -54,17 +64,15 @@ This guide outlines the complete process for onboarding and managing Windows dev
   - Restart
   - Remote assist
 
----
-
 </details>
 
-<details> <summary>🧩 Autopilot registration</summary>
+## 🧩 Autopilot registration
 
-Your company uses Microsoft Intune to manage Windows devices. After purchasing laptops, you can register them in Intune using **Windows Autopilot**. There are two trusted paths: **Vendor Upload** and **IT Admin Upload**.
+Company uses Microsoft Intune to manage Windows devices. After purchasing laptops, you can register them in Intune using **Windows Autopilot**. There are two trusted paths: **Vendor Upload** and **IT Admin Upload**.
 
----
 
-### ✅ 1. Vendor Upload (OEM or Reseller)
+<details> <summary>1️⃣ Vendor Upload (OEM or Reseller)</summary>
+<br>
 
 **Best for:** Bulk purchases from authorized vendors like Dell, HP, Lenovo, etc.
 
@@ -82,9 +90,10 @@ Your company uses Microsoft Intune to manage Windows devices. After purchasing l
 
 > 📦 Devices arrive pre-registered and ready for Autopilot provisioning.
 
----
+</details>
 
-### 🛠 2. IT Admin Upload (Manual or Scripted)
+<details> <summary>2️⃣ IT Admin Upload (Manual or Scripted)</summary>
+<br>
 
 **Best for:** Internal setup, lab devices, or when vendor upload isn’t available.
 
@@ -97,6 +106,7 @@ Your company uses Microsoft Intune to manage Windows devices. After purchasing l
    Set-Location c:\HWID
    Install-Script -Name Get-WindowsAutopilotInfo
    Get-WindowsAutopilotInfo -OutputFile AutopilotHWID.csv
+
 </details>
 
 
@@ -249,7 +259,7 @@ Pre-provisioning allows IT to fully configure a Windows Autopilot device **befor
 
 ---
 
-## 🔐 What Is Enrollment?
+## 🔐 Enrollment
 
 > Enrollment is the process of connecting the device to Intune so it can be managed.
 
@@ -282,7 +292,7 @@ Pre-provisioning allows IT to fully configure a Windows Autopilot device **befor
 2. Deploy   → Configure device setup (OOBE, apps, policies)
 3. Enroll   → Connect device to Intune for management
 4. Manage   → Monitor, secure, and support the device
-
+```
 
 
 
