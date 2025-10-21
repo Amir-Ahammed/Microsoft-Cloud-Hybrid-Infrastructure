@@ -117,8 +117,6 @@ Understanding the difference between **deployment** and **enrollment** is essent
 - Joining the device to **Azure AD** or **Hybrid AD**
 
 ### 🧭 When It Happens:
-- During **Out-of-Box Experience (OOBE)**
-- Or via **Pre-provisioning** (White Glove)
 <details>
   <summary>Out-of-Box Experience (OOBE)</summary>
 
@@ -158,10 +156,97 @@ Understanding the difference between **deployment** and **enrollment** is essent
 </details>
 
 ### 🧩 Deployment Methods:
-- **User-driven Autopilot**
-- **Self-deploying Autopilot**
-- **Pre-provisioned Autopilot**
-- **Provisioning Package (PPKG)**
+<details> <summary>1️⃣ User-Driven Autopilot</summary>
+
+> Best for: Employee laptops and personal-use corporate devices
+
+### 🔧 Intune Configuration:
+
+1. Go to **Intune Admin Center > Devices > Windows enrollment > Deployment Profiles**
+2. Click **+ Create profile**
+3. Select:
+   - **Join type**: Azure AD Join or Hybrid Azure AD Join
+   - **Deployment mode**: User-driven
+4. Configure profile settings:
+   - Skip privacy settings ✅
+   - Set user account type: Standard or Administrator
+   - Optionally configure language, region, keyboard
+5. Assign profile to:
+   - Specific devices (manual)
+   - Or dynamic group (based on Group Tag)
+6. Ensure **MDM auto-enrollment** is enabled:
+   - Go to **Azure AD > Mobility (MDM and MAM)**
+   - Set **MDM user scope** to **All**
+
+</details>
+
+<details> <summary>2️⃣ Self-Deploying Autopilot</summary>
+
+> Best for: Kiosks, shared devices, digital signage
+
+### 🔧 Intune Configuration:
+
+1. Go to **Deployment Profiles > + Create profile**
+2. Select:
+   - **Join type**: Azure AD Join
+   - **Deployment mode**: Self-deploying
+3. Configure profile settings:
+   - No user sign-in required
+   - Skip privacy settings ✅
+   - Device must support **TPM 2.0** and be connected via **Ethernet**
+4. Assign profile to device or group
+5. Confirm device readiness:
+   - TPM attestation must be enabled
+   - Device must be registered in Autopilot
+
+</details>
+
+<details> <summary> 3️⃣ Pre-Provisioned Autopilot (White Glove)</summary>
+
+> Best for: IT pre-staging devices before handoff to users
+
+### 🔧 Intune Configuration:
+
+1. Create a **User-driven profile** with:
+   - **Deployment mode**: Pre-provisioned
+   - **Join type**: Azure AD Join
+2. Assign profile to device or group
+3. IT boots device into OOBE
+4. Press **Windows key + 5** to start pre-provisioning
+5. Device:
+   - Downloads profile
+   - Installs apps and policies
+   - Shows green screen if successful
+6. IT shuts down device
+7. End user powers on → signs in → ready to use
+
+</details>
+
+<details> <summary> 4️⃣ Provisioning Package (PPKG)</summary>
+
+> Best for: Offline or bulk setup without internet
+
+### 🔧 Intune Configuration:
+
+1. Install **Windows Configuration Designer** on admin PC
+2. Create a new provisioning package:
+   - Join Azure AD
+   - Enroll in Intune
+   - Add Wi-Fi, apps, policies
+3. Export package to USB
+4. Boot device into OOBE
+5. Apply PPKG manually during setup
+6. Device joins Azure AD and enrolls into Intune
+
+</details>
+
+> ✅ Each method supports different scenarios. Choose based on device type, user role, and network availability.
+
+
+
+
+
+
 
 ---
 
