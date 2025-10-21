@@ -58,7 +58,7 @@ This guide outlines the complete process for onboarding and managing Windows dev
 
 </details>
 
-<details> <summary>🧩 Autopilot registration process</summary>
+<details> <summary>🧩 Autopilot registration</summary>
 
 Your company uses Microsoft Intune to manage Windows devices. After purchasing laptops, you can register them in Intune using **Windows Autopilot**. There are two trusted paths: **Vendor Upload** and **IT Admin Upload**.
 
