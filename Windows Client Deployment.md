@@ -66,6 +66,7 @@ Deploy (Autopilot profile applies setup)
 Enroll (Device joins Intune)
    ↓
 Manage (Ongoing control via Intune)
+```
 
 </details>
 
