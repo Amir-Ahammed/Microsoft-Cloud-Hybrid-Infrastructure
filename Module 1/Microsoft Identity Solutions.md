@@ -231,20 +231,6 @@ This approach involves deploying **Windows Server virtual machines** in Azure an
 | **Use Case** | Standalone PCs, unmanaged devices | Traditional enterprise networks | SaaS apps, cloud-first orgs | Legacy app support in cloud | Full AD control in cloud |
 | **Admin Control** | Local only | Full domain control | Role-based (RBAC, PIM) | Limited (managed service) | Full domain controller access |
 
-
-## 🆚 Admin Center Comparison
-
-| Feature | Microsoft 365 Admin Center | Entra Admin Center | Intune Admin Center |
-|---------|----------------------------|---------------------|----------------------|
-| **Interface** | Simplified | Advanced | Policy-driven |
-| **User Management** | Basic | Granular (RBAC, PIM) | Limited (focuses on devices) |
-| **Group Types** | Microsoft 365 Groups, DLs | Security, Dynamic Groups | Uses Entra groups for targeting |
-| **Role Assignment** | Limited | Full RBAC & PIM | Scoped roles for device admins |
-| **Governance** | Minimal | Full lifecycle & access reviews | Compliance policies, conditional access |
-| **Focus Area** | Collaboration & licensing | Identity, access, governance | Device, app, and endpoint security |
-| **Key Capabilities** | License assignment, mailbox setup | Identity lifecycle, MFA, SSO | Device enrollment, app deployment, compliance enforcement |
-
----
 ---
 
 ## ☁️ Azure Identity Features
@@ -260,6 +246,7 @@ This approach involves deploying **Windows Server virtual machines** in Azure an
 | Conditional Access | Policy-based authentication control |
 
 ---
+
 ## 🧠 Best Practices
 
 - Use **RBAC** to avoid over-permissioning.
