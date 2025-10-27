@@ -1,6 +1,6 @@
 # Microsoft Identity Solutions
 
-## 🔐 Identity Fundamentals
+## Identity Fundamentals
 
 - **Authentication**: Verifies identity (e.g., username + password).
 - **Authorization**: Grants access to resources (e.g., open file, change settings).
@@ -8,34 +8,34 @@
 
 ---
 
-## 🧑‍💻 Local Identity Management
+## Local Identity Management
 
-### 🏠 Windows Local Accounts
+### Windows Local Accounts
 - Created during initial setup or manually.
 - Stored in the local SAM (Security Account Manager) database.
 - Used for access to **only that device**.
 
-### 👥 Group Types
+### Group Types
 
 | Group Type | Description | Use Case |
 |------------|-------------|----------|
 | Local Groups | Built-in groups for assigning permissions on a single device. | File system access, service control, remote desktop permissions |
 | Special Identity Groups | System-defined identities used in access control lists (ACLs). Not manually created or managed. | OS-level access control, service permissions, anonymous or network logon contexts |
 
-### 📦 Group Scopes
+### Group Scopes
 
 - ❌ No domain or forest structure.
 - All groups are **local to the device**.
 
 
-### 👥 Local Groups
+### Local Groups
 
 Local groups are used to assign permissions to multiple users on a single device. They are managed via:
 
 - **Computer Management → Local Users and Groups**
 - **PowerShell (`Get-LocalGroup`, `Add-LocalGroupMember`)**
 
-### 📋 Common Local Groups
+### Common Local Groups
 
 | Group               | Purpose |
 |---------------------|---------|
@@ -55,7 +55,7 @@ Local groups are used to assign permissions to multiple users on a single device
 
 > ⚠️ Always assign users to the **least privileged group** necessary to perform their tasks. This helps maintain system security and stability.
 
-### 🧙 Special Identity Groups
+### Special Identity Groups
 
 These are predefined identity groups in Windows and Active Directory environments. They are automatically created by the system and used to manage access control and permissions.
 
@@ -70,7 +70,7 @@ These are predefined identity groups in Windows and Active Directory environment
 | **Service** | Represents services running under service accounts. |
 | **System** | Represents the operating system itself. |
 
-### 🧑‍💻 Membership Effects
+### Membership Effects
 
 - **Direct Membership**: Users added to local groups inherit permissions on that device.
 - **No Nesting Support**: Local groups do not support nested group structures.
@@ -79,25 +79,25 @@ These are predefined identity groups in Windows and Active Directory environment
 
 ---
 
-## 🏢 On-Premises AD Identity Management
+## On-Premises AD Identity Management
 
 Active Directory Domain Services (AD DS) is Microsoft’s on-premises identity and access management system. It provides centralized control over users, groups, devices, and resources.
 
-### 🌳 Key Characteristics
+### Key Characteristics
 
 - **Hierarchical and Granular**: AD is structured like a tree with forests, domains, and organizational units (OUs). This allows fine-grained control over resources and policies.
 - **Security Based on Groups**: Permissions are assigned to groups rather than individual users. This simplifies access control and improves scalability.
 - **Group Policy Administration**: AD uses Group Policy Objects (GPOs) to enforce settings across users and computers (e.g., password policies, desktop restrictions).
 - **Kerberos Authentication**: AD uses the Kerberos protocol for secure, ticket-based authentication. It’s fast, secure, and supports single sign-on (SSO).
 
-### 👥 Group Types
+### Group Types
 
 | Type | Description | Use Case |
 |------|-------------|----------|
 | **Security Group** | Used to assign permissions to resources. | File shares, printers, apps. |
 | **Distribution Group** | Used for email distribution only. | Exchange mailing lists. |
 
-### 📦 Group Scopes
+### Group Scopes
 
 | Scope | Description | Use Case |
 |-------|-------------|----------|
@@ -105,20 +105,20 @@ Active Directory Domain Services (AD DS) is Microsoft’s on-premises identity a
 | **Global** | Members from same domain, usable across domains. | Department-level access. |
 | **Universal** | Members from any domain in forest. | Enterprise-wide access across domains.
 
-### 🔧 Group Management Tools
+### Group Management Tools
 
 - **Active Directory Users and Computers (ADUC)**: GUI tool for managing users, groups, and OUs.
 - **PowerShell**: Scripted management using cmdlets like `New-ADGroup`, `Add-ADGroupMember`, `Get-ADGroup`.
 - **GPMC**: Group Policy Management Console
 
-### 🧩 Membership Effects
+### Membership Effects
 
 - **Direct Membership**: User inherits permissions assigned to the group.
 - **Nested Groups**: Groups can be added to other groups for scalable access control.
 - **Transitive Membership**: Universal groups support nesting across domains.
 - **Access Control**: Membership affects access to files, folders, apps, and GPOs.
 
-### 🔐 Authentication Protocol
+### Authentication Protocol
 
 - **Kerberos**: Default protocol used in AD DS. Provides secure, ticket-based authentication.
 - **NTLM**: Legacy protocol, still supported but less secure.
@@ -127,30 +127,30 @@ Active Directory Domain Services (AD DS) is Microsoft’s on-premises identity a
 
 ---
 
-## ☁️ Cloud Identity Management
+## Cloud Identity Management
 
 Cloud identity solutions extend identity and access management beyond traditional on-premises environments. These services are designed for scalability, security, and integration with modern apps and infrastructure.
 
 ---
 
-### 🔐 Microsoft Entra ID (formerly Azure AD)
+### Microsoft Entra ID (formerly Azure AD)
 
 Microsoft Entra ID is a **cloud-based identity provider** used to manage users, groups, devices, and access to SaaS applications.
 
-#### ✅ Key Features
+#### Key Features
 - Single Sign-On (SSO) for Microsoft 365, Zoom, Salesforce, etc.
 - Supports OAuth2, OpenID Connect, SAML protocols.
 - Role-Based Access Control (RBAC) for apps and resources.
 - Conditional Access policies for secure authentication.
 - Identity Governance: Access reviews, entitlement management, lifecycle workflows.
 
-#### 👤 User Management
+#### User Management
 - Create users manually or sync from on-prem AD via Azure AD Connect.
 - Assign licenses (e.g., Microsoft 365, Intune).
 - Configure user attributes, roles, and MFA settings.
 - Delegate access using **RBAC** and **PIM**.
 
-#### 👥 Group Types
+#### Group Types
 
 | Group Type | Description | Use Case |
 |------------|-------------|----------|
@@ -161,12 +161,12 @@ Microsoft Entra ID is a **cloud-based identity provider** used to manage users, 
 
 > 🔧 Dynamic groups in Entra ID are available only for Security and Microsoft 365 Groups.
 
-#### 📦 Group Scopes
+#### Group Scopes
 
 - ❌ No Domain Local, Global, or Universal scopes.
 - All groups are **tenant-wide** and operate across the entire Entra tenant.
 
-#### 🧩 Membership Effects
+#### Membership Effects
 
 - **Direct Membership**: Users explicitly added to a group inherit permissions and access assigned to that group. 
 - **Dynamic Membership**: Users are automatically added/removed based on attributes (e.g., department, job title). Managed via rules. 
@@ -184,11 +184,11 @@ Microsoft Entra ID is a **cloud-based identity provider** used to manage users, 
 
 ---
 
-### 🏢 Microsoft Entra Domain Services
+### Microsoft Entra Domain Services
 
 Entra Domain Services provides **managed domain services** like domain join, LDAP, Kerberos, and Group Policy—**without deploying domain controllers**.
 
-#### ✅ Key Features
+#### Key Features
 - Domain join for Azure VMs.
 - LDAP and Kerberos authentication.
 - Group Policy support in cloud environments.
@@ -199,48 +199,75 @@ Entra Domain Services provides **managed domain services** like domain join, LDA
 - Passwords must be synced using **Azure AD password hash sync**.
 - Users can log in to domain-joined VMs using their Entra credentials.
 
-#### 👥 Group Management
-- Security groups from Entra ID are available in Entra DS.
-- Group membership affects access to domain-joined resources.
-- Group Policy can be applied to users and groups within the managed domain.
+#### Group Types
 
-#### 🔧 Tools
+| Group Type | Description | Use Case |
+|------------|-------------|----------|
+| Security Group (synced from Entra ID) | Used for access control and GPO targeting. | Domain-joined VM access, legacy app permissions |
+
+#### Group Scopes
+
+| Scope | Description |
+|-------|-------------|
+| Domain Local | Behaves like AD DS but scoped to the managed domain |
+
+#### Group Membership Effects
+
+- **Direct Membership**: Users inherit permissions from Entra-synced security groups.
+- **Group Policy Targeting**: Membership affects GPO application within the managed domain.
+- **Domain Join Access**: Group membership controls login rights to domain-joined Azure VMs.
+- **No Dynamic or Nested Groups**: Entra DS does not support dynamic or nested group logic natively.
+
+#### Group Management Tools
 - Group Policy Management Console (GPMC) on domain-joined VM
 - Entra Admin Center (for upstream group management)
 
 ---
 
-### 🧱 Azure IaaS Windows Server VMs with AD DS
+### Azure IaaS Windows Server VMs with AD DS
 
 This approach involves deploying **Windows Server virtual machines** in Azure and manually installing **Active Directory Domain Services (AD DS)**.
 
-#### ✅ Key Features
+#### Key Features
 - Full control over domain controllers.
 - Supports traditional AD features: forests, trusts, OUs, GPOs.
 - Can be integrated with on-prem AD via VPN or ExpressRoute.
 
-#### 🧰 Use Cases
-- Custom AD configurations in the cloud.
-- Hosting AD-dependent applications.
-- Hybrid environments needing full AD control.
-
-#### 👤 User Management
+#### User Management
 - Create users using **Active Directory Users and Computers (ADUC)**.
 - Full control over user attributes, OU placement, and login policies.
 - Can sync with Entra ID using **Azure AD Connect**.
 
-#### 👥 Group Management
-- Create and manage **Security** and **Distribution** groups.
-- Use **Group Scopes**: Domain Local, Global, Universal.
-- Apply **Group Policy Objects (GPOs)** to groups for centralized management.
+#### Group Types
 
-#### 🔧 Tools
+| Group Type | Description | Use Case |
+|------------|-------------|----------|
+| Security Group | Assign permissions to resources. | File shares, apps, GPOs |
+| Distribution Group | Email distribution only. | Exchange mailing lists |
+
+### Group Scopes
+
+| Scope | Description | Use Case |
+|-------|-------------|----------|
+| Domain Local | Used within a single domain. | Local resource access |
+| Global | Members from same domain, usable across domains. | Department-level access |
+| Universal | Members from any domain in forest. | Enterprise-wide access across domains |
+
+#### Group Membership Effects
+
+- **Direct Membership**: Users inherit permissions from AD DS groups.
+- **Nested Groups**: Supports scalable access control via group nesting.
+- **Transitive Membership**: Universal groups allow cross-domain nesting and access.
+- **Access Control**: Membership affects access to files, folders, apps, and GPOs.
+- **Full AD Behavior**: Mirrors traditional on-prem AD group logic and effects.
+
+#### Group Management Tools
 - ADUC (GUI)
 - PowerShell (`New-ADUser`, `Add-ADGroupMember`)
 - GPMC (Group Policy Management Console)
 
 ---
-## 🆚 Identity Management Models Comparison
+## Identity Management Models Comparison
 
 | Feature | Local Identity Management | On-Premises AD Identity | Microsoft Entra ID | Entra Domain Services | Azure IaaS AD DS |
 |--------|----------------------------|--------------------------|---------------------|------------------------|------------------|
@@ -258,7 +285,7 @@ This approach involves deploying **Windows Server virtual machines** in Azure an
 
 ---
 
-## ☁️ Azure Identity Features
+## Azure Identity Features
 
 | Feature | Description |
 |--------|-------------|
@@ -272,7 +299,7 @@ This approach involves deploying **Windows Server virtual machines** in Azure an
 
 ---
 
-## 🧠 Best Practices
+## Best Practices
 
 - Use **RBAC** to avoid over-permissioning.
 - Sync **on-prem AD** with **Entra ID** for hybrid identity.
