@@ -3,7 +3,7 @@
 
 ---
 
-### Identity Fundamentals
+### >Identity Fundamentals<
 
 - **Authentication**: Verifying user identity using credentials or tokens (e.g., username + password).
 - **Authorization**: Granting access to resources based on roles and policies (e.g., open file, change settings).
