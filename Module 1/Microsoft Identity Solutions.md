@@ -9,7 +9,7 @@
 - **Authorization**: Granting access to resources based on roles and policies (e.g., open file, change settings).
 - **Governance**: Controlling lifecycle, compliance, and privileged access.
 
-### Identity Models Covered
+### Identity Models
 
 - **Windows Local Identity**: Device-specific accounts and groups.
 - **Active Directory Domain Services (AD DS)**: Centralized on-premises identity infrastructure.
