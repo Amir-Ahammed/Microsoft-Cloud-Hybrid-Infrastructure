@@ -194,7 +194,7 @@ Entra Domain Services provides **managed domain services** like domain join, LDA
 - Group Policy support in cloud environments.
 - No need to patch or manage domain controllers.
 
-#### 👤 User Management
+#### User Management
 - Users are synced from Entra ID (no direct creation in Entra DS).
 - Passwords must be synced using **Azure AD password hash sync**.
 - Users can log in to domain-joined VMs using their Entra credentials.
