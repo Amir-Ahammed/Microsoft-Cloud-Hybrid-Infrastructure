@@ -16,17 +16,31 @@
 - Used for access to **only that device**.
 
 ### 👥 Local Groups
-- Used to assign permissions to multiple users.
-- Managed via **Computer Management → Local Users and Groups** or PowerShell.
 
-| Group | Purpose |
-|-------|---------|
-| **Administrators** | Full control over the device. |
-| **Backup Operators** | Can back up/restore files. |
-| **Event Log Readers** | Can view system logs. |
-| **Guests** | Limited access. |
+Local groups are used to assign permissions to multiple users on a single device. They are managed via:
 
----
+- **Computer Management → Local Users and Groups**
+- **PowerShell (`Get-LocalGroup`, `Add-LocalGroupMember`)**
+
+### 📋 Common Local Groups
+
+| Group               | Purpose |
+|---------------------|---------|
+| **Administrators**      | Full control over the device. |
+| **Backup Operators**    | Can back up and restore files. |
+| **Event Log Readers**   | Can view system logs. |
+| **Guests**              | Limited access to the system. |
+| **Users**               | Standard access to use apps and files. |
+| **Power Users**         | More privileges than Users, less than Administrators. |
+| **Remote Desktop Users**| Can log in remotely using Remote Desktop. |
+| **Network Configuration Operators** | Can manage network settings. |
+| **Replicator**          | Supports file replication services. |
+| **Distributed COM Users** | Can launch and use DCOM objects. |
+| **Cryptographic Operators** | Can perform cryptographic operations. |
+| **Device Owners**       | Identified as owners of the device. |
+| **Access Control Assistance Operators** | Can remotely query access permissions. |
+
+> ⚠️ Always assign users to the **least privileged group** necessary to perform their tasks. This helps maintain system security and stability.
 
 ### 🧙 Special Identity Groups
 
