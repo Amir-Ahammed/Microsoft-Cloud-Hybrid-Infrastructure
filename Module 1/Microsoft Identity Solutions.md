@@ -70,6 +70,13 @@ These are predefined identity groups in Windows and Active Directory environment
 | **Service** | Represents services running under service accounts. |
 | **System** | Represents the operating system itself. |
 
+### 🧑‍💻 Membership Effects
+
+- **Direct Membership**: Users added to local groups inherit permissions on that device.
+- **No Nesting Support**: Local groups do not support nested group structures.
+- **Access Control**: Membership affects access to local files, folders, services, and system features.
+- **Special Identity Groups**: Automatically assigned based on login context (e.g., Network, Interactive).
+
 ---
 
 ## 🏢 On-Premises AD Identity Management
