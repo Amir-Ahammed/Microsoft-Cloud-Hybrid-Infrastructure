@@ -28,17 +28,20 @@
 
 ---
 
-## 🧙 Special Identity Groups
+## 🧙 Special Identity Groups (Local Windows & AD)
 
-These are built-in groups with predefined roles:
+These are predefined identity groups in Windows and Active Directory environments. They are automatically created by the system and used to manage access control and permissions.
 
 | Group | Description |
 |-------|-------------|
-| Everyone | All users, including guests. |
-| Authenticated Users | Users who have logged in successfully. |
-| Anonymous Logon | Users accessing without credentials. |
-| Interactive | Users logged in locally. |
-| Network | Users accessing over the network. |
+| **Anonymous Logon** | Represents users who access resources without providing credentials. Common in public or unauthenticated scenarios. |
+| **Authenticated Users** | Includes all users who have successfully signed in with valid credentials. More secure than "Everyone." |
+| **Creator Owner** | Refers to the user who created a file or folder. Used to assign ownership-based permissions. |
+| **Everyone** | Includes all users, including guests and anonymous users. Broadest group—use with caution. |
+| **Interactive** | Represents users who are logged in locally to the computer (e.g., keyboard/mouse access). |
+| **Network** | Represents users accessing the system remotely over the network (e.g., file shares, remote desktop). |
+| **Service** | Represents services running under a service account. Used for background tasks and system services. |
+| **System** | Represents the operating system itself. Has full access to all system resources and files. |
 
 ---
 
