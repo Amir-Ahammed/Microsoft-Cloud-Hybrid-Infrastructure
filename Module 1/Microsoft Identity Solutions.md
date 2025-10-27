@@ -1,4 +1,4 @@
-# Microsoft Identity Solutions
+# Microsoft Identity Solutions]
 **Microsoft Identity Solutions provide a unified framework for managing user identities, access permissions, and authentication across local devices, on-premises networks, and cloud environments. These solutions enable secure, scalable, and flexible identity management for organizations of all sizes.**
 
 ---
