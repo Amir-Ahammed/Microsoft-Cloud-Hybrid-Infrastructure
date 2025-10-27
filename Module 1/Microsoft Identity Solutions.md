@@ -215,6 +215,21 @@ This approach involves deploying **Windows Server virtual machines** in Azure an
 - GPMC (Group Policy Management Console)
 
 ---
+## 🆚 Identity Management Models Comparison
+
+| Feature | Local Identity Management | On-Premises AD Identity | Microsoft Entra ID | Entra Domain Services | Azure IaaS AD DS |
+|--------|----------------------------|--------------------------|---------------------|------------------------|------------------|
+| **Location** | Device-local | On-premises servers | Cloud-native | Cloud-managed | Cloud-hosted VMs |
+| **User Storage** | Local SAM database | AD DS database | Entra ID tenant | Synced from Entra ID | AD DS on Azure VMs |
+| **Group Types** | Local groups | Security & Distribution | Security, M365, Dynamic | Security (from Entra ID) | Security & Distribution |
+| **Group Scopes** | Device-only | Domain Local, Global, Universal | Tenant-wide | Domain Local | Domain Local, Global, Universal |
+| **Authentication** | NTLM (local only) | Kerberos, NTLM | OAuth2, OpenID Connect, SAML | Kerberos, LDAP | Kerberos, NTLM |
+| **Policy Control** | Manual per device | Group Policy (GPO) | Conditional Access, PIM | Group Policy (GPO) | Group Policy (GPO) |
+| **User Creation** | Manual on device | Manual or synced | Manual, synced, API | Synced only | Manual via ADUC |
+| **Management Tools** | Computer Management, PowerShell | ADUC, GPMC, PowerShell | Entra Admin Center, Graph API | GPMC on domain-joined VM | ADUC, GPMC, PowerShell |
+| **Directory Sync** | None | Optional (to Entra ID) | Native | From Entra ID | Optional (to Entra ID) |
+| **Use Case** | Standalone PCs, unmanaged devices | Traditional enterprise networks | SaaS apps, cloud-first orgs | Legacy app support in cloud | Full AD control in cloud |
+| **Admin Control** | Local only | Full domain control | Role-based (RBAC, PIM) | Limited (managed service) | Full domain controller access |
 
 
 ## 🆚 Admin Center Comparison
@@ -230,33 +245,21 @@ This approach involves deploying **Windows Server virtual machines** in Azure an
 | **Key Capabilities** | License assignment, mailbox setup | Identity lifecycle, MFA, SSO | Device enrollment, app deployment, compliance enforcement |
 
 ---
+---
 
-## ☁️ Azure in Identity and Access Management
-
-Azure is Microsoft’s cloud platform that hosts infrastructure, applications, and identity services. It integrates deeply with Entra ID and Intune to provide secure, scalable, and flexible identity solutions.
-
-### 🔐 Key Identity Features in Azure
+## ☁️ Azure Identity Features
 
 | Feature | Description |
 |--------|-------------|
-| **Azure Active Directory (Entra ID)** | Cloud-based identity provider for apps, users, and devices. |
-| **Azure AD Connect** | Syncs on-prem AD with Entra ID for hybrid identity. |
-| **Azure RBAC** | Role-based access control for managing Azure resources. |
-| **Azure Policy** | Enforces governance rules across subscriptions. |
-| **Privileged Identity Management (PIM)** | Just-in-time access for sensitive roles. |
-| **Managed Identities** | Automatically managed credentials for Azure services. |
-| **Conditional Access** | Enforces access policies based on user/device conditions. |
-
-### 🧱 Azure IaaS (Infrastructure as a Service)
-
-- Deploy **Windows Server VMs** and install **AD DS** for full control.
-- Use **Azure Files**, **Azure Storage**, and **Azure Networking** with identity-based access.
-- Integrate with **Entra Domain Services** for legacy support.
-
-> Azure enables hybrid and cloud-native identity models, making it ideal for enterprises transitioning from on-prem to cloud.
+| Entra ID | Cloud identity for apps, users, devices |
+| Azure AD Connect | Sync on-prem AD with Entra ID |
+| Azure RBAC | Role-based access for resources |
+| Azure Policy | Governance enforcement |
+| PIM | Just-in-time privileged access |
+| Managed Identities | Credential-free service access |
+| Conditional Access | Policy-based authentication control |
 
 ---
-
 ## 🧠 Best Practices
 
 - Use **RBAC** to avoid over-permissioning.
