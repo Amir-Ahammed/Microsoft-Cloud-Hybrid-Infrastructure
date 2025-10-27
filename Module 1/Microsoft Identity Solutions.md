@@ -89,6 +89,7 @@ Active Directory Domain Services (AD DS) is Microsoft’s on-premises identity a
 
 - **Active Directory Users and Computers (ADUC)**: GUI tool for managing users, groups, and OUs.
 - **PowerShell**: Scripted management using cmdlets like `New-ADGroup`, `Add-ADGroupMember`, `Get-ADGroup`.
+- **GPMC**: Group Policy Management Console
 
 ### 🧩 Group Membership Effects
 
