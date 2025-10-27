@@ -127,27 +127,6 @@ Used in:
 
 ---
 
-## 🧭 Admin Tools
-
-| Tool | Purpose |
-|------|---------|
-| **Computer Management** | Manage local users/groups |
-| **PowerShell** | Scripted identity management |
-| **Microsoft 365 Admin Center** | Manage cloud users/groups |
-| **Microsoft Entra Admin Center** | Advanced identity governance |
-
----
-
-## 🆚 Microsoft 365 vs Entra Admin Center
-
-| Feature | Microsoft 365 Admin Center | Entra Admin Center |
-|---------|----------------------------|---------------------|
-| Interface | Simplified | Advanced |
-| User Management | Basic | Granular |
-| Group Types | Microsoft 365 Groups, DLs | Security, Dynamic Groups |
-| Role Assignment | Limited | Full RBAC & PIM |
-| Governance | Minimal | Full lifecycle & access reviews |
-
 ## 🆚 Admin Center Comparison
 
 | Feature | Microsoft 365 Admin Center | Entra Admin Center | Intune Admin Center |
@@ -197,3 +176,4 @@ Azure is Microsoft’s cloud platform that hosts infrastructure, applications, a
 - Avoid assigning permissions directly to users—use groups.
 - Use **Privileged Identity Management (PIM)** for just-in-time admin access.
 
+---
