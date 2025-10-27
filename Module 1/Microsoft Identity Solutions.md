@@ -106,7 +106,7 @@ Active Directory Domain Services (AD DS) is Microsoft’s on-premises identity a
 
 ---
 
-## ☁️ Cloud Identity Management (Detailed Overview)
+## ☁️ Cloud Identity Management
 
 Cloud identity solutions extend identity and access management beyond traditional on-premises environments. These services are designed for scalability, security, and integration with modern apps and infrastructure.
 
@@ -140,6 +140,22 @@ Microsoft Entra ID is a **cloud-based identity provider** used to manage users, 
 - PowerShell (`New-AzureADGroup`, `Add-AzureADGroupMember`)
 - Microsoft Graph API
 
+#### 🛡️ Role-Based Access Control (RBAC)
+
+- Assign roles based on job function.
+- Roles define what actions users can perform.
+
+| Role | Permissions |
+|------|-------------|
+| Reader | View-only access |
+| Contributor | Create/edit resources |
+| Owner/Admin | Full control |
+
+Used in:
+- Microsoft Entra ID
+- Microsoft 365 Admin Center
+- Azure Resource Manager
+
 ---
 
 ### 🏢 Microsoft Entra Domain Services
@@ -157,6 +173,20 @@ Entra Domain Services provides **managed domain services** like domain join, LDA
 - Extend AD-like capabilities to cloud workloads.
 - Support hybrid identity scenarios without full AD infrastructure.
 
+#### 👤 User Management
+- Users are synced from Entra ID (no direct creation in Entra DS).
+- Passwords must be synced using **Azure AD password hash sync**.
+- Users can log in to domain-joined VMs using their Entra credentials.
+
+#### 👥 Group Management
+- Security groups from Entra ID are available in Entra DS.
+- Group membership affects access to domain-joined resources.
+- Group Policy can be applied to users and groups within the managed domain.
+
+#### 🔧 Tools
+- Group Policy Management Console (GPMC) on domain-joined VM
+- Entra Admin Center (for upstream group management)
+
 ---
 
 ### 🧱 Azure IaaS Windows Server VMs with AD DS
@@ -173,9 +203,24 @@ This approach involves deploying **Windows Server virtual machines** in Azure an
 - Hosting AD-dependent applications.
 - Hybrid environments needing full AD control.
 
+#### 👤 User Management
+- Create users using **Active Directory Users and Computers (ADUC)**.
+- Full control over user attributes, OU placement, and login policies.
+- Can sync with Entra ID using **Azure AD Connect**.
+
+#### 👥 Group Management
+- Create and manage **Security** and **Distribution** groups.
+- Use **Group Scopes**: Domain Local, Global, Universal.
+- Apply **Group Policy Objects (GPOs)** to groups for centralized management.
+
+#### 🔧 Tools
+- ADUC (GUI)
+- PowerShell (`New-ADUser`, `Add-ADGroupMember`)
+- GPMC (Group Policy Management Console)
+
 ---
 
-### 🔍 Comparison Summary
+## 🔍 Comparison Summary
 
 | Feature | Entra ID | Entra Domain Services | Azure IaaS AD DS |
 |--------|----------|------------------------|------------------|
@@ -185,47 +230,6 @@ This approach involves deploying **Windows Server virtual machines** in Azure an
 | Group Policy | ❌ | ✅ | ✅ |
 | Admin Control | High-level (RBAC) | Limited (managed) | Full (manual) |
 | Use Case | SaaS access, cloud apps | Legacy app support | Full AD in cloud |
-
-
-
----
-
-
-
-## ☁️ Azure IaaS AD DS
-
-- Deploy **Windows Server VMs** in Azure.
-- Install and configure **Active Directory Domain Services**.
-- Offers full control over domain controllers in the cloud.
-- Ideal for lift-and-shift scenarios or hybrid environments.
-
----
-
-## 🔄 Identity Synchronization
-
-- Use **Azure AD Connect** to sync on-prem AD with Entra ID.
-- Enables hybrid identity: users can access both on-prem and cloud resources.
-- Supports password hash sync, pass-through authentication, and federation.
-
----
-
-## 🛡️ Role-Based Access Control (RBAC)
-
-- Assign roles based on job function.
-- Roles define what actions users can perform.
-
-| Role | Permissions |
-|------|-------------|
-| Reader | View-only access |
-| Contributor | Create/edit resources |
-| Owner/Admin | Full control |
-
-Used in:
-- Microsoft Entra ID
-- Microsoft 365 Admin Center
-- Azure Resource Manager
-
----
 
 ## 🆚 Admin Center Comparison
 
