@@ -74,6 +74,8 @@ These are predefined identity groups in Windows and Active Directory environment
 - **Access Control**: Membership affects access to local files, folders, services, and system features.
 - **Special Identity Groups**: Automatically assigned based on login context (e.g., Network, Interactive).
 
+---
+
 ## 🟦 On-Premises AD Identity Management
 
 Active Directory Domain Services (AD DS) is Microsoft’s on-premises identity and access management system. It provides centralized control over users, groups, devices, and resources.
@@ -119,6 +121,8 @@ Active Directory Domain Services (AD DS) is Microsoft’s on-premises identity a
 - **NTLM**: Legacy protocol, still supported but less secure.
 
 > ⚠️ Best Practice: Use **Global groups for users**, **Domain Local groups for resources**, and **Universal groups for cross-domain access**.
+
+---
 
 ## 🟦 Cloud Identity Management
 
@@ -173,6 +177,8 @@ Microsoft Entra ID is a **cloud-based identity provider** used to manage users, 
 - PowerShell (`New-AzureADGroup`, `Add-AzureADGroupMember`)
 - Microsoft Graph API
 
+---
+
 ### 🔐 Microsoft Entra Domain Services
 
 Entra Domain Services provides **managed domain services** like domain join, LDAP, Kerberos, and Group Policy—**without deploying domain controllers**.
@@ -210,6 +216,8 @@ Entra Domain Services provides **managed domain services** like domain join, LDA
 #### Group Management Tools
 - Group Policy Management Console (GPMC) on domain-joined VM
 - Entra Admin Center (for upstream group management)
+
+---
 
 ### 🔐 Azure IaaS Windows Server VMs with AD DS
 
@@ -253,6 +261,8 @@ This approach involves deploying **Windows Server virtual machines** in Azure an
 - PowerShell (`New-ADUser`, `Add-ADGroupMember`)
 - GPMC (Group Policy Management Console)
 
+---
+
 ## 🆚 Identity Management Models Comparison
 
 | Feature | Local Identity Management | On-Premises AD Identity | Microsoft Entra ID | Entra Domain Services | Azure IaaS AD DS |
@@ -269,6 +279,8 @@ This approach involves deploying **Windows Server virtual machines** in Azure an
 | **Use Case** | Standalone PCs, unmanaged devices | Traditional enterprise networks | SaaS apps, cloud-first orgs | Legacy app support in cloud | Full AD control in cloud |
 | **Admin Control** | Local only | Full domain control | Role-based (RBAC, PIM) | Limited (managed service) | Full domain controller access |
 
+---
+
 ## 🧩 Azure Identity Features
 
 | Feature | Description |
@@ -280,6 +292,8 @@ This approach involves deploying **Windows Server virtual machines** in Azure an
 | PIM | Just-in-time privileged access |
 | Managed Identities | Credential-free service access |
 | Conditional Access | Policy-based authentication control |
+
+---
 
 ## 🧠 Best Practices
 
