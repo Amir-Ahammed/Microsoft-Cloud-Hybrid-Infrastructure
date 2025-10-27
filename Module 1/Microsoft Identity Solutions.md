@@ -9,12 +9,27 @@
 - **Authorization**: Granting access to resources based on roles and policies (e.g., open file, change settings).
 - **Governance**: Controlling lifecycle, compliance, and privileged access.
 
-## 🟦 Local Identity Management
+## 🧱 Identity Models Covered
 
-### Windows Local Accounts
-- Created during initial setup or manually.
-- Stored in the local SAM (Security Account Manager) database.
-- Used for access to **only that device**.
+- **Windows Local Identity**: Device-specific accounts and groups.
+- **Active Directory Domain Services (AD DS)**: Centralized on-premises identity infrastructure.
+- **Microsoft Entra ID**: Cloud-native identity provider for SaaS and enterprise apps.
+- **Microsoft Entra Domain Services**: Managed domain services in Azure for legacy app support.
+- **Azure IaaS AD DS**: Full AD deployment on cloud-hosted Windows Server VMs.
+
+> Microsoft’s identity ecosystem supports hybrid environments, enabling seamless integration between on-premises and cloud systems while enforcing modern security practices like Conditional Access, MFA, and Zero Trust.
+
+---
+
+## 🟦 Windows Local Accounts
+Windows Local Accounts are user identities created and stored directly on a specific Windows device. They are not connected to any domain or cloud identity provider, making them ideal for standalone systems or simple environments.
+
+### Key Characteristics
+
+- Stored in the **Security Account Manager (SAM)** database on the local machine.
+- Used for **authentication and access control** on that device only.
+- Can be created during setup or manually via **Settings** or **Computer Management**.
+- Supports **local password policies**, but lacks centralized management or synchronization.
 
 ### Group Types
 
