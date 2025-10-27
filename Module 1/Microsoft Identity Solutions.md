@@ -21,10 +21,10 @@
 
 | Group | Purpose |
 |-------|---------|
-| Administrators | Full control over the device. |
-| Backup Operators | Can back up/restore files. |
-| Event Log Readers | Can view system logs. |
-| Guests | Limited access. |
+| **Administrators** | Full control over the device. |
+| **Backup Operators** | Can back up/restore files. |
+| **Event Log Readers** | Can view system logs. |
+| **Guests** | Limited access. |
 
 ---
 
