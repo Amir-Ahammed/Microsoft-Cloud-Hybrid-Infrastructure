@@ -159,6 +159,18 @@ Microsoft Entra ID is a **cloud-based identity provider** used to manage users, 
 - ❌ No Domain Local, Global, or Universal scopes.
 - All groups are **tenant-wide** and operate across the entire Entra tenant.
 
+####  Membership Effects
+
+| Effect | Description |
+|--------|-------------|
+| **Direct Membership** | Users explicitly added to a group inherit permissions and access assigned to that group. |
+| **Dynamic Membership** | Users are automatically added/removed based on attributes (e.g., department, job title). Managed via rules. |
+| **Role Assignment** | Group membership can be used to assign roles (e.g., Entra roles, Intune roles, Azure RBAC roles). |
+| **Access Control** | Membership affects access to apps, Conditional Access policies, license assignments, and resource targeting. |
+| **App Assignment** | Groups can be used to assign access to enterprise applications (e.g., Salesforce, Zoom, SharePoint). |
+| **Policy Targeting** | Groups are used to scope Conditional Access, compliance policies, and Intune configurations. |
+
+> ⚠️ Entra ID does not support nested groups in the same way as AD DS. While some apps (like Exchange Online) may support nested group resolution, Entra ID itself treats group membership as flat.
 
 #### 🔧 Group Management Tools
 - Microsoft Entra Admin Center
