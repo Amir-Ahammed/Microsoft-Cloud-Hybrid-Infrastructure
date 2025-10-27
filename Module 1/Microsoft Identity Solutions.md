@@ -1,0 +1,182 @@
+# 🧩 Microsoft Identity Solutions – Full Lecture Summary
+
+## 🔐 Identity Fundamentals
+
+- **Authentication**: Verifies identity (e.g., username + password).
+- **Authorization**: Grants access to resources (e.g., open file, change settings).
+- **Capabilities**: Management rights (e.g., admin privileges).
+
+---
+
+## 🧑‍💻 Local Identity Management
+
+### 🏠 Windows Local Accounts
+- Created during initial setup or manually.
+- Stored in the local SAM (Security Account Manager) database.
+- Used for access to **only that device**.
+
+### 👥 Local Groups
+- Used to assign permissions to multiple users.
+- Managed via **Computer Management → Local Users and Groups** or PowerShell.
+
+| Group | Purpose |
+|-------|---------|
+| Administrators | Full control over the device. |
+| Backup Operators | Can back up/restore files. |
+| Event Log Readers | Can view system logs. |
+| Guests | Limited access. |
+
+---
+
+## 🧙 Special Identity Groups
+
+These are built-in groups with predefined roles:
+
+| Group | Description |
+|-------|-------------|
+| Everyone | All users, including guests. |
+| Authenticated Users | Users who have logged in successfully. |
+| Anonymous Logon | Users accessing without credentials. |
+| Interactive | Users logged in locally. |
+| Network | Users accessing over the network. |
+
+---
+
+## 🏢 On-Premises AD Identity Management
+
+### 🌳 AD Hierarchy
+- **Forest**: Collection of domain trees.
+- **Tree**: Hierarchical structure of domains.
+- **Domain**: Logical boundary for users, groups, and resources.
+
+### 👥 AD Group Types
+
+| Type | Description | Use Case |
+|------|-------------|----------|
+| **Security Group** | Assign permissions to resources. | File shares, printers, apps. |
+| **Distribution Group** | Used for email distribution only. | Exchange mailing lists. |
+
+### 📦 AD Group Scopes
+
+| Scope | Description | Use Case |
+|-------|-------------|----------|
+| **Domain Local** | Used within a single domain. | Grant access to local resources. |
+| **Global** | Members from same domain, usable across domains. | Department-level access. |
+| **Universal** | Members from any domain in forest. | Enterprise-wide access across domains. |
+
+### 🧬 Group Membership Effects
+
+- **Direct Membership**: User inherits permissions assigned to the group.
+- **Nested Groups**: Groups can be added to other groups (e.g., Sales → Marketing).
+- **Transitive Membership**: Universal groups support nesting across domains.
+- **Access Control**: Membership affects access to files, folders, apps, and policies.
+
+> ⚠️ Best Practice: Use **Global groups for users**, **Domain Local groups for resources**, and **Universal groups for cross-domain access**.
+
+---
+
+## ☁️ Azure IaaS AD DS
+
+- Deploy **Windows Server VMs** in Azure.
+- Install and configure **Active Directory Domain Services**.
+- Offers full control over domain controllers in the cloud.
+- Ideal for lift-and-shift scenarios or hybrid environments.
+
+---
+
+## 🔄 Identity Synchronization
+
+- Use **Azure AD Connect** to sync on-prem AD with Entra ID.
+- Enables hybrid identity: users can access both on-prem and cloud resources.
+- Supports password hash sync, pass-through authentication, and federation.
+
+---
+
+## 🛡️ Role-Based Access Control (RBAC)
+
+- Assign roles based on job function.
+- Roles define what actions users can perform.
+
+| Role | Permissions |
+|------|-------------|
+| Reader | View-only access |
+| Contributor | Create/edit resources |
+| Owner/Admin | Full control |
+
+Used in:
+- Microsoft Entra ID
+- Microsoft 365 Admin Center
+- Azure Resource Manager
+
+---
+
+## 🧭 Admin Tools
+
+| Tool | Purpose |
+|------|---------|
+| **Computer Management** | Manage local users/groups |
+| **PowerShell** | Scripted identity management |
+| **Microsoft 365 Admin Center** | Manage cloud users/groups |
+| **Microsoft Entra Admin Center** | Advanced identity governance |
+
+---
+
+## 🆚 Microsoft 365 vs Entra Admin Center
+
+| Feature | Microsoft 365 Admin Center | Entra Admin Center |
+|---------|----------------------------|---------------------|
+| Interface | Simplified | Advanced |
+| User Management | Basic | Granular |
+| Group Types | Microsoft 365 Groups, DLs | Security, Dynamic Groups |
+| Role Assignment | Limited | Full RBAC & PIM |
+| Governance | Minimal | Full lifecycle & access reviews |
+
+## 🆚 Admin Center Comparison
+
+| Feature | Microsoft 365 Admin Center | Entra Admin Center | Intune Admin Center |
+|---------|----------------------------|---------------------|----------------------|
+| **Interface** | Simplified | Advanced | Policy-driven |
+| **User Management** | Basic | Granular (RBAC, PIM) | Limited (focuses on devices) |
+| **Group Types** | Microsoft 365 Groups, DLs | Security, Dynamic Groups | Uses Entra groups for targeting |
+| **Role Assignment** | Limited | Full RBAC & PIM | Scoped roles for device admins |
+| **Governance** | Minimal | Full lifecycle & access reviews | Compliance policies, conditional access |
+| **Focus Area** | Collaboration & licensing | Identity, access, governance | Device, app, and endpoint security |
+| **Key Capabilities** | License assignment, mailbox setup | Identity lifecycle, MFA, SSO | Device enrollment, app deployment, compliance enforcement |
+
+---
+
+## ☁️ Azure in Identity and Access Management
+
+Azure is Microsoft’s cloud platform that hosts infrastructure, applications, and identity services. It integrates deeply with Entra ID and Intune to provide secure, scalable, and flexible identity solutions.
+
+### 🔐 Key Identity Features in Azure
+
+| Feature | Description |
+|--------|-------------|
+| **Azure Active Directory (Entra ID)** | Cloud-based identity provider for apps, users, and devices. |
+| **Azure AD Connect** | Syncs on-prem AD with Entra ID for hybrid identity. |
+| **Azure RBAC** | Role-based access control for managing Azure resources. |
+| **Azure Policy** | Enforces governance rules across subscriptions. |
+| **Privileged Identity Management (PIM)** | Just-in-time access for sensitive roles. |
+| **Managed Identities** | Automatically managed credentials for Azure services. |
+| **Conditional Access** | Enforces access policies based on user/device conditions. |
+
+### 🧱 Azure IaaS (Infrastructure as a Service)
+
+- Deploy **Windows Server VMs** and install **AD DS** for full control.
+- Use **Azure Files**, **Azure Storage**, and **Azure Networking** with identity-based access.
+- Integrate with **Entra Domain Services** for legacy support.
+
+> Azure enables hybrid and cloud-native identity models, making it ideal for enterprises transitioning from on-prem to cloud.
+
+---
+
+## 🧠 Best Practices
+
+- Use **RBAC** to avoid over-permissioning.
+- Sync **on-prem AD** with **Entra ID** for hybrid identity.
+- Use **Entra Domain Services** for legacy app support in cloud.
+- Regularly audit **group memberships** and **access rights**.
+- Avoid assigning permissions directly to users—use groups.
+- Use **Privileged Identity Management (PIM)** for just-in-time admin access.
+
