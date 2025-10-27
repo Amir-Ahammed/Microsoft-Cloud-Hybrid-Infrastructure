@@ -104,7 +104,7 @@ Active Directory Domain Services (AD DS) is Microsoft’s on-premises identity a
 - **PowerShell**: Scripted management using cmdlets like `New-ADGroup`, `Add-ADGroupMember`, `Get-ADGroup`.
 - **GPMC**: Group Policy Management Console
 
-### 🧩 Group Membership Effects
+### 🧩 Membership Effects
 
 - **Direct Membership**: User inherits permissions assigned to the group.
 - **Nested Groups**: Groups can be added to other groups for scalable access control.
@@ -159,7 +159,7 @@ Microsoft Entra ID is a **cloud-based identity provider** used to manage users, 
 - ❌ No Domain Local, Global, or Universal scopes.
 - All groups are **tenant-wide** and operate across the entire Entra tenant.
 
-####  Membership Effects
+#### 🧩 Membership Effects
 
 | Effect | Description |
 |--------|-------------|
