@@ -133,7 +133,7 @@ Cloud identity solutions extend identity and access management beyond traditiona
 
 ---
 
-### 👥 Microsoft Entra ID (formerly Azure AD)
+### 🔐 Microsoft Entra ID (formerly Azure AD)
 
 Microsoft Entra ID is a **cloud-based identity provider** used to manage users, groups, devices, and access to SaaS applications.
 
@@ -177,14 +177,14 @@ Microsoft Entra ID is a **cloud-based identity provider** used to manage users, 
 
 > ⚠️ Entra ID does not support nested groups in the same way as AD DS. While some apps (like Exchange Online) may support nested group resolution, Entra ID itself treats group membership as flat.
 
-#### 🔧 Group Management Tools
+#### Group Management Tools
 - Microsoft Entra Admin Center
 - PowerShell (`New-AzureADGroup`, `Add-AzureADGroupMember`)
 - Microsoft Graph API
 
 ---
 
-### 👥 Microsoft Entra Domain Services
+### 🔐 Microsoft Entra Domain Services
 
 Entra Domain Services provides **managed domain services** like domain join, LDAP, Kerberos, and Group Policy—**without deploying domain controllers**.
 
@@ -224,7 +224,7 @@ Entra Domain Services provides **managed domain services** like domain join, LDA
 
 ---
 
-### 👥 Azure IaaS Windows Server VMs with AD DS
+### 🔐 Azure IaaS Windows Server VMs with AD DS
 
 This approach involves deploying **Windows Server virtual machines** in Azure and manually installing **Active Directory Domain Services (AD DS)**.
 
@@ -267,7 +267,7 @@ This approach involves deploying **Windows Server virtual machines** in Azure an
 - GPMC (Group Policy Management Console)
 
 ---
-## 🟦 Identity Management Models Comparison
+## 🆚 Identity Management Models Comparison
 
 | Feature | Local Identity Management | On-Premises AD Identity | Microsoft Entra ID | Entra Domain Services | Azure IaaS AD DS |
 |--------|----------------------------|--------------------------|---------------------|------------------------|------------------|
@@ -285,7 +285,7 @@ This approach involves deploying **Windows Server virtual machines** in Azure an
 
 ---
 
-## 🟦 Azure Identity Features
+## 🧩 Azure Identity Features
 
 | Feature | Description |
 |--------|-------------|
@@ -299,7 +299,7 @@ This approach involves deploying **Windows Server virtual machines** in Azure an
 
 ---
 
-## 🟦 Best Practices
+## 🧠 Best Practices
 
 - Use **RBAC** to avoid over-permissioning.
 - Sync **on-prem AD** with **Entra ID** for hybrid identity.
