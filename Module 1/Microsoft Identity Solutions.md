@@ -3,13 +3,13 @@
 
 ---
 
-### >Identity Fundamentals<
+### Identity Fundamentals
 
 - **Authentication**: Verifying user identity using credentials or tokens (e.g., username + password).
 - **Authorization**: Granting access to resources based on roles and policies (e.g., open file, change settings).
 - **Governance**: Controlling lifecycle, compliance, and privileged access.
 
-### >Identity Models<
+### Identity Models
 
 - **Windows Local Identity**: Device-specific accounts and groups.
 - **Active Directory Domain Services (AD DS)**: Centralized on-premises identity infrastructure.
@@ -21,7 +21,7 @@
 
 ---
 
-## 🟦 Windows Local Accounts
+## 🟦 Windows Local Accounts |
 Windows Local Accounts are user identities created and stored directly on a specific Windows device. They are not connected to any domain or cloud identity provider, making them ideal for standalone systems or simple environments.
 
 ### Key Characteristics
@@ -94,7 +94,7 @@ These are predefined identity groups in Windows and Active Directory environment
 
 ---
 
-## 🟦 On-Premises AD Identity Management
+## 🟦 On-Premises AD Identity Management |
 
 Active Directory Domain Services (AD DS) is Microsoft’s on-premises identity and access management system. It provides centralized control over users, groups, devices, and resources.
 
@@ -142,11 +142,11 @@ Active Directory Domain Services (AD DS) is Microsoft’s on-premises identity a
 
 ---
 
-## 🟦 Cloud Identity Management
+## 🟦 Cloud Identity Management |
 
 Cloud identity solutions extend identity and access management beyond traditional on-premises environments. These services are designed for scalability, security, and integration with modern apps and infrastructure.
 
-### 🔐 Microsoft Entra ID (formerly Azure AD)
+### 🔐 Microsoft Entra ID (formerly Azure AD) <
 
 Microsoft Entra ID is a **cloud-based identity provider** used to manage users, groups, devices, and access to SaaS applications.
 
@@ -197,7 +197,7 @@ Microsoft Entra ID is a **cloud-based identity provider** used to manage users, 
 
 ---
 
-### 🔐 Microsoft Entra Domain Services
+### 🔐 Microsoft Entra Domain Services <
 
 Entra Domain Services provides **managed domain services** like domain join, LDAP, Kerberos, and Group Policy—**without deploying domain controllers**.
 
@@ -237,7 +237,7 @@ Entra Domain Services provides **managed domain services** like domain join, LDA
 
 ---
 
-### 🔐 Azure IaaS Windows Server VMs with AD DS
+### 🔐 Azure IaaS Windows Server VMs with AD DS <
 
 This approach involves deploying **Windows Server virtual machines** in Azure and manually installing **Active Directory Domain Services (AD DS)**.
 
@@ -281,7 +281,7 @@ This approach involves deploying **Windows Server virtual machines** in Azure an
 
 ---
 
-## 🆚 Identity Management Models Comparison
+## 🆚 Identity Management Models Comparison |
 
 | Feature | Local Identity Management | On-Premises AD Identity | Microsoft Entra ID | Entra Domain Services | Azure IaaS AD DS |
 |--------|----------------------------|--------------------------|---------------------|------------------------|------------------|
@@ -299,21 +299,7 @@ This approach involves deploying **Windows Server virtual machines** in Azure an
 
 ---
 
-## 🧩 Azure Identity Features
-
-| Feature | Description |
-|--------|-------------|
-| Entra ID | Cloud identity for apps, users, devices |
-| Azure AD Connect | Sync on-prem AD with Entra ID |
-| Azure RBAC | Role-based access for resources |
-| Azure Policy | Governance enforcement |
-| PIM | Just-in-time privileged access |
-| Managed Identities | Credential-free service access |
-| Conditional Access | Policy-based authentication control |
-
----
-
-## 🧠 Best Practices
+## 🧠 Best Practices |
 
 - Use **RBAC** to avoid over-permissioning.
 - Sync **on-prem AD** with **Entra ID** for hybrid identity.
