@@ -9,8 +9,6 @@
 - **Authorization**: Granting access to resources based on roles and policies (e.g., open file, change settings).
 - **Governance**: Controlling lifecycle, compliance, and privileged access.
 
----
-
 ## 🟦 Local Identity Management
 
 ### Windows Local Accounts
