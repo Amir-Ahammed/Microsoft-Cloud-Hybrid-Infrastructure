@@ -143,40 +143,27 @@ Microsoft Entra ID is a **cloud-based identity provider** used to manage users, 
 - Configure user attributes, roles, and MFA settings.
 - Delegate access using **RBAC** and **PIM**.
 
-#### Group Types
+#### 👥 Group Types
 
-| Platform | Group Types | Description | Use Case |
-|----------|-------------|-------------|----------|
-| **Microsoft Entra ID** | Security Groups, Microsoft 365 Groups, Dynamic Groups, Distribution Groups | Used for access control, collaboration, and automated membership. | Conditional Access, Teams, SharePoint, license targeting |
+| Group Type | Description | Use Case |
+|------------|-------------|----------|
+| **Security Group** | Assign access to apps and resources. | Conditional Access, app targeting (e.g., SharePoint, Teams) |
+| **Microsoft 365 Group** | Collaboration group with mailbox, Teams, Planner. | Team-based collaboration |
+| **Dynamic Group** | Auto-membership based on attributes. | Auto-grouping by department, location (e.g., department = Sales) |
+| **Distribution Group** | Email distribution only. | Exchange Online mailing lists |
 
 > 🔧 Dynamic groups in Entra ID are available only for Security and Microsoft 365 Groups.
 
-#### 👥 Group Management
-- **Security Groups**: Used to assign access to resources (e.g., SharePoint, Teams).
-- **Microsoft 365 Groups**: Used for collaboration (email, Teams, Planner).
-- **Dynamic Groups**: Automatically add/remove users based on attributes (e.g., department = Sales).
-- Groups can be used for Conditional Access, app assignments, and policy targeting.
+#### 📦 Group Scopes
 
-#### 🔧 Management Tools
+- ❌ No Domain Local, Global, or Universal scopes.
+- All groups are **tenant-wide** and operate across the entire Entra tenant.
+
+
+#### 🔧 Group Management Tools
 - Microsoft Entra Admin Center
 - PowerShell (`New-AzureADGroup`, `Add-AzureADGroupMember`)
 - Microsoft Graph API
-
-#### 🛡️ Role-Based Access Control (RBAC)
-
-- Assign roles based on job function.
-- Roles define what actions users can perform.
-
-| Role | Permissions |
-|------|-------------|
-| Reader | View-only access |
-| Contributor | Create/edit resources |
-| Owner/Admin | Full control |
-
-Used in:
-- Microsoft Entra ID
-- Microsoft 365 Admin Center
-- Azure Resource Manager
 
 ---
 
