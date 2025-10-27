@@ -15,6 +15,19 @@
 - Stored in the local SAM (Security Account Manager) database.
 - Used for access to **only that device**.
 
+### 👥 Group Types
+
+| Group Type | Description | Use Case |
+|------------|-------------|----------|
+| Local Groups | Built-in groups for assigning permissions on a single device. | File system access, service control, remote desktop permissions |
+| Special Identity Groups | System-defined identities used in access control lists (ACLs). Not manually created or managed. | OS-level access control, service permissions, anonymous or network logon contexts |
+
+### 📦 Group Scopes
+
+- ❌ No domain or forest structure.
+- All groups are **local to the device**.
+
+
 ### 👥 Local Groups
 
 Local groups are used to assign permissions to multiple users on a single device. They are managed via:
@@ -48,14 +61,14 @@ These are predefined identity groups in Windows and Active Directory environment
 
 | Group | Description |
 |-------|-------------|
-| **Anonymous Logon** | Represents users who access resources without providing credentials. Common in public or unauthenticated scenarios. |
-| **Authenticated Users** | Includes all users who have successfully signed in with valid credentials. More secure than "Everyone." |
-| **Creator Owner** | Refers to the user who created a file or folder. Used to assign ownership-based permissions. |
-| **Everyone** | Includes all users, including guests and anonymous users. Broadest group—use with caution. |
-| **Interactive** | Represents users who are logged in locally to the computer (e.g., keyboard/mouse access). |
-| **Network** | Represents users accessing the system remotely over the network (e.g., file shares, remote desktop). |
-| **Service** | Represents services running under a service account. Used for background tasks and system services. |
-| **System** | Represents the operating system itself. Has full access to all system resources and files. |
+| **Anonymous Logon** | Represents users accessing resources without credentials. |
+| **Authenticated Users** | All users who have signed in successfully. |
+| **Creator Owner** | Refers to the user who created a file or folder. |
+| **Everyone** | Includes all users, including guests and anonymous. |
+| **Interactive** | Users logged in locally to the computer. |
+| **Network** | Users accessing the system remotely. |
+| **Service** | Represents services running under service accounts. |
+| **System** | Represents the operating system itself. |
 
 ---
 
@@ -129,6 +142,14 @@ Microsoft Entra ID is a **cloud-based identity provider** used to manage users, 
 - Assign licenses (e.g., Microsoft 365, Intune).
 - Configure user attributes, roles, and MFA settings.
 - Delegate access using **RBAC** and **PIM**.
+
+#### Group Types
+
+| Platform | Group Types | Description | Use Case |
+|----------|-------------|-------------|----------|
+| **Microsoft Entra ID** | Security Groups, Microsoft 365 Groups, Dynamic Groups, Distribution Groups | Used for access control, collaboration, and automated membership. | Conditional Access, Teams, SharePoint, license targeting |
+
+> 🔧 Dynamic groups in Entra ID are available only for Security and Microsoft 365 Groups.
 
 #### 👥 Group Management
 - **Security Groups**: Used to assign access to resources (e.g., SharePoint, Teams).
