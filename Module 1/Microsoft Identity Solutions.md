@@ -1,4 +1,4 @@
-# 🧩 Microsoft Identity Solutions – Full Lecture Summary
+# 🧩 Microsoft Identity Solutions
 
 ## 🔐 Identity Fundamentals
 
