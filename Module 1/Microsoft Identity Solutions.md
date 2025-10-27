@@ -1,4 +1,4 @@
-# 🧩 Microsoft Identity Solutions
+# Microsoft Identity Solutions
 
 ## 🔐 Identity Fundamentals
 
