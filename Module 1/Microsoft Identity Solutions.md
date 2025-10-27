@@ -220,16 +220,6 @@ This approach involves deploying **Windows Server virtual machines** in Azure an
 
 ---
 
-## 🔍 Comparison Summary
-
-| Feature | Entra ID | Entra Domain Services | Azure IaaS AD DS |
-|--------|----------|------------------------|------------------|
-| Type | Cloud-native identity | Managed legacy AD | Self-managed AD |
-| Domain Join | ❌ | ✅ | ✅ |
-| LDAP/Kerberos | ❌ | ✅ | ✅ |
-| Group Policy | ❌ | ✅ | ✅ |
-| Admin Control | High-level (RBAC) | Limited (managed) | Full (manual) |
-| Use Case | SaaS access, cloud apps | Legacy app support | Full AD in cloud |
 
 ## 🆚 Admin Center Comparison
 
