@@ -28,7 +28,7 @@
 
 ---
 
-## 🧙 Special Identity Groups (Local Windows & AD)
+## 🧙 Special Identity Groups (Local & AD)
 
 These are predefined identity groups in Windows and Active Directory environments. They are automatically created by the system and used to manage access control and permissions.
 
