@@ -1,6 +1,6 @@
 # Microsoft Identity Solutions
 
-## 👥 Identity Fundamentals
+## Identity Fundamentals
 
 - **Authentication**: Verifies identity (e.g., username + password).
 - **Authorization**: Grants access to resources (e.g., open file, change settings).
