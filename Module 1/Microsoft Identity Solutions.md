@@ -6,7 +6,7 @@
 - **Authorization**: Grants access to resources (e.g., open file, change settings).
 - **Capabilities**: Management rights (e.g., admin privileges).
 
----
+--
 
 ## Local Identity Management
 
