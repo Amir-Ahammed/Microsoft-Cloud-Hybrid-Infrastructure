@@ -85,7 +85,7 @@ These are predefined identity groups in Windows and Active Directory environment
 | **Service** | Represents services running under service accounts. |
 | **System** | Represents the operating system itself. |
 
-> They're not rally groups, they're categorizations of Users.
+> ⚠️ They're not really groups, they're categorizations of Users.
 
 ### Membership Effects
 
