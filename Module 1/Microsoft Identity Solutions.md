@@ -168,6 +168,7 @@ Microsoft Entra ID is a **cloud-based identity provider** used to manage users, 
 - Group Membership can be:
   - Assigned
   - Dynamic (Required Entra Premium)
+  
 | Group Type | Description | Use Case |
 |------------|-------------|----------|
 | **Security Group** | Assign access to apps and resources. | Conditional Access, app targeting (e.g., SharePoint, Teams) |
