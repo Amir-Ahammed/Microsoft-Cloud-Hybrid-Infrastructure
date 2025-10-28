@@ -1,4 +1,4 @@
-# 🖥️ Windows Client Deployment using Microsoft Intune
+# 🖥️ Device Management Lifecycle
 
 ## 📘 Overview
 Microsoft Intune is a cloud-based endpoint management solution that helps organizations manage and secure Windows devices. It enables automated deployment, configuration, and compliance enforcement for Windows clients across hybrid or fully cloud environments.
