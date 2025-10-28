@@ -142,6 +142,13 @@ Active Directory Domain Services (AD DS) is Microsoft’s on-premises identity a
 
 > ⚠️ Best Practice: Use **Global groups for users**, **Domain Local groups for resources**, and **Universal groups for cross-domain access**.
 
+<details> <summary>Demonstration Screenshorts</summary>
+
+  ### Hierarchical Structure: 
+  <img width="1745" height="847" alt="image" src="https://github.com/user-attachments/assets/8e08ebe6-58fa-4257-8a24-e4a837235519" />
+  
+</details>
+
 ---
 
 ## 🟦 Cloud Identity Management |
