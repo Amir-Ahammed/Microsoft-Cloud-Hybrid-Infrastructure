@@ -314,6 +314,18 @@ This approach involves deploying **Windows Server virtual machines** in Azure an
 
 ---
 
+## 🆚 Admin Center Comparison
+
+| Feature | Microsoft 365 Admin Center | Entra Admin Center | Intune Admin Center | Azure Portal |
+|---------|----------------------------|---------------------|----------------------|---------------|
+| Interface | Simplified | Advanced | Policy-driven | Technical & modular |
+| User Management | Basic | Granular (RBAC, PIM) | Device-focused | Identity + resource access |
+| Group Types | M365 Groups, DLs | Security, Dynamic | Entra-based targeting | Entra-based access control |
+| Role Assignment | Limited | Full RBAC & PIM | Scoped roles | Azure RBAC |
+| Governance | Minimal | Lifecycle & access reviews | Compliance policies | Policies, blueprints, audit logs |
+| Focus Area | Collaboration | Identity & access | Endpoint security | Infrastructure & cloud services |
+
+
 ## 🆚 Identity Management Models Comparison |
 
 | Feature | Local Identity Management | On-Premises AD Identity | Microsoft Entra ID | Entra Domain Services | Azure IaaS AD DS |
