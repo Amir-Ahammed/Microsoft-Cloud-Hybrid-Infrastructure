@@ -236,6 +236,9 @@ Entra Domain Services provides **managed domain services** like domain join, LDA
 - LDAP and Kerberos authentication.
 - Group Policy support in cloud environments.
 - No need to patch or manage domain controllers.
+- Support for Directory-Aware applications
+- Integrates with Entra ID
+- Managed domain services on Azure
 
 #### User Management
 - Users are synced from Entra ID (no direct creation in Entra DS).
