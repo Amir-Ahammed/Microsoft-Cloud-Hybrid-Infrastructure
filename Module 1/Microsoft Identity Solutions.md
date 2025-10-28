@@ -94,6 +94,16 @@ These are predefined identity groups in Windows and Active Directory environment
 - **Access Control**: Membership affects access to local files, folders, services, and system features.
 - **Special Identity Groups**: Automatically assigned based on login context (e.g., Network, Interactive).
 
+<details> <summary>Demonstration Screenshorts</summary>
+
+  ### Local Users: 
+  <img width="1231" height="883" alt="image" src="https://github.com/user-attachments/assets/14c6c9f0-8da8-4a8a-81b4-be1a4c1d15a7" />
+  
+  ### Local Groups:
+  <img width="1221" height="873" alt="image" src="https://github.com/user-attachments/assets/b5c05b22-5e91-4184-b23a-0652847ec235" />
+  
+</details>
+
 ---
 
 ## 🟦 On-Premises AD Identity Management |
