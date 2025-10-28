@@ -85,6 +85,8 @@ These are predefined identity groups in Windows and Active Directory environment
 | **Service** | Represents services running under service accounts. |
 | **System** | Represents the operating system itself. |
 
+> They're not rally groups, they're categorizations of Users.
+
 ### Membership Effects
 
 - **Direct Membership**: Users added to local groups inherit permissions on that device.
