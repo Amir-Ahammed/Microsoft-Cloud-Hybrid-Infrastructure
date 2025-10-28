@@ -195,7 +195,7 @@ Microsoft Entra ID is a **cloud-based identity provider** used to manage users, 
 > ⚠️ Entra ID does not support nested groups in the same way as AD DS. While some apps (like Exchange Online) may support nested group resolution, Entra ID itself treats group membership as flat.
 
 #### Group Management Tools
-- Microsoft Entra Admin Center
+- Microsoft 365 admin center / Entra Admin Center / Intune Admin Center
 - PowerShell (`New-AzureADGroup`, `Add-AzureADGroupMember`)
 - Microsoft Graph API
 
