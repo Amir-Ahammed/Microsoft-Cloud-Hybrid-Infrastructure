@@ -156,7 +156,14 @@ Active Directory Domain Services (AD DS) is Microsoft’s on-premises identity a
 
   ### Hierarchical Structure: 
   <img width="1745" height="847" alt="image" src="https://github.com/user-attachments/assets/8e08ebe6-58fa-4257-8a24-e4a837235519" />
-  
+
+  ### AD Groups:
+  <img width="1550" height="900" alt="image" src="https://github.com/user-attachments/assets/e9ea3e1f-b2cd-4302-a125-b157de5acdc7" />
+
+  ### Group Creation:
+  <img width="802" height="749" alt="image" src="https://github.com/user-attachments/assets/cd74b6d7-15a0-441d-9f4a-b5d89952b7c4" />
+
+
 </details>
 
 ---
