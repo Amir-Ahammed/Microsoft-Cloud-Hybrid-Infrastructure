@@ -96,6 +96,25 @@ You can enter up to **three** valid builds. & Exports the current OS build list 
 ---
 
 </details>
+<details><summary><b>Configuration Manager Compliance</b>: Compliance data from <b>Configuration Manager</b> (co-managed devices)</summary>
+
+### Configuration Manager Compliance
+This setting is used when your organization uses **Microsoft Configuration Manager (SCCM)** together with **Intune** in a co-management or tenant-attach scenario.  
+It allows you to require compliance results coming directly from SCCM rather than relying only on Intune’s compliance engine.
+
+**Require device compliance from Configuration Manager**
+- **Require** → The device must also be compliant in **SCCM (Configuration Manager)**. If SCCM says the device is not compliant, Intune will also mark it as not compliant.
+- **Not Configured** → Intune ignores SCCM.  
+
+>> #### **What this means in practice**
+> - Devices report hardware/software inventory to SCCM.
+> - SCCM evaluates compliance based on its own baselines (e.g., antivirus status, patch level, configuration baselines).
+> - Intune will *only* trust SCCM’s compliance result.
+> - If SCCM reports **Non-compliant**, Intune will mark the device **Non-compliant**, even if Intune settings are fully met.
+
+---
+
+</details>
 <details><summary><b>Security Requirements</b>: Password/PIN, encryption, firewall, antivirus, threat level, etc.</summary>
 
 >
