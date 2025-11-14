@@ -11,18 +11,21 @@ Compliance Policies define the minimum security requirements a device must meet 
 
 ---
 
-## 3. Supported Platforms
-- Windows 10/11  
+## 2. Supported Platforms
+- Windows 10 and later
+- Windows 8 and later
 - macOS  
 - iOS/iPadOS  
-- Android (Fully Managed / Work Profile / Dedicated)  
+- Android Device Administrator
+- Android (AOSP)
+- Android Enterprise
 - Linux (limited support)  
 - Windows Holographic / Surface Hub (limited scenarios)
 
-## 2. What a Compliance Policy Consists Of
-A compliance policy includes the following components:
-
 ---
+
+## 3. Compliance Policy Consists Of
+A compliance policy includes the following components:
 
 ### Compliance Settings
 
@@ -61,9 +64,7 @@ This determines who the policy applies to.
 
 > Assignment ensures the policy applies only to the correct devices/users.
 
----
-
-## Notification Settings
+### Notification Settings
 Notification Settings control how Intune alerts users when their device becomes non-compliant. These help ensure users take action before access is blocked.
 
 **Name**
@@ -94,15 +95,28 @@ Define the **email body** that users will receive.
 
 ---
 
-## 4. Default Compliance Policy
-Intune includes a built-in default compliance policy:
-- Applies when a device has no compliance policy assigned
-- Evaluates basic things such as:
-  - Device is not jailbroken/rooted
-  - Intune can retrieve device health data
-- You can change the default action but not modify the built-in settings.
+## 4. Built-in Device Compliance Policy
+Define how Intune treats devices when no compliance policy is assigned OR when compliance data becomes outdated. <br>
+This acts as the **global fallback compliance behavior**.
 
-> Admins usually create their own policies instead of relying on this one.
+### Mark Devices with No Compliance Policy Assigned As
+- You can choose:
+  - **Compliant** (recommended for BYOD or during early rollout)
+  - **Not Compliant** (recommended for strict environments)
+- This setting ensures unmanaged devices are handled consistently.
+
+> **Example**: If a user never receives a compliance policy, this toggle decides whether their device is allowed access by Conditional Access.
+
+### Compliance Status Validity Period (Days)
+- Defines how long a device’s compliance state remains valid without checking in.
+- Default: 30 days
+- After this period:
+  - The device is marked “Not Compliant” until it checks in again.
+  - Helps catch devices that have gone missing, offline, or outdated.
+ 
+>> **Why this matters**:
+> - Ensures stale devices don’t remain permanently compliant.
+> - Forces regular device check-in for accurate compliance reporting.
 
 
 ---
