@@ -192,6 +192,13 @@ It allows you to require compliance results coming directly from SCCM rather tha
 </details>
 <details><summary><b>Custom Compliance</b>: JSON + PowerShell script-based custom rules</summary>
 
+### Custom Compliance
+Custom Compliance allows you to define your own device compliance rules using:
+- **PowerShell Script**: Runs on the device → collects data (e.g., registry value, service status, app installation, custom check).
+- **JSON Rule**: Interprets the script output → tells Intune whether the device is compliant or non-compliant.
+
+> This is used when Intune’s built-in compliance settings do not cover your requirement.
+
 #### Example (PowerShell Script)
 This script checks whether Chrome exists on the device and outputs the result in Intune-required format.
 ```
