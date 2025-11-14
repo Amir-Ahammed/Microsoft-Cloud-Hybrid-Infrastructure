@@ -31,10 +31,13 @@ A compliance policy includes the following components:
 
 **1. Device Health Requirements**
 - OS version, jailbreak/rooting detection, TPM, secure boot, etc.
+
 **2. Security Requirements**
 - Password/PIN, encryption, firewall, antivirus, threat level, etc.
+
 **3. System Requirements**
 - OS updates, disk encryption, configuration levels
+
 **4. Custom Compliance**
 - JSON + PowerShell script-based custom rules
 
