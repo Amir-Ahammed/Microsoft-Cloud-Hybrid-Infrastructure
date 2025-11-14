@@ -117,7 +117,77 @@ It allows you to require compliance results coming directly from SCCM rather tha
 </details>
 <details><summary><b>Security Requirements</b>: Password/PIN, encryption, firewall, antivirus, threat level, etc.</summary>
 
->
+### Password Settings
+
+- **Require a password to unlock mobile devices**
+  - **Require** → Device must use a password to unlock.
+  - **Not Configured** → No password requirement enforced.
+
+- **Simple passwords**
+  - **Block** → User cannot use easy passwords (1234, 1111).
+  - **Not Configured** → Simple passwords are allowed.
+
+- **Password type**
+  - **Device default** → Uses the OS’s default password rules.
+
+- **Minimum password length**
+  - Sets the minimum number of characters (e.g., 4, 6, 8).
+
+- **Maximum minutes of inactivity before password is required**
+  - Forces password entry after the device is idle for X minutes.
+
+- **Password expiration (days)**
+  - Forces users to change their password every X days.
+
+- **Number of previous passwords to prevent reuse**
+  - Prevents reusing old passwords (e.g., last 5).
+
+- **Require password when device returns from idle state**
+  - **Require** → Password needed after screen turns off.
+  - **Not Configured** → Device follows its own default behavior.
+
+### Encryption
+
+- **Require encryption of data storage on device**
+  - **Require** → Device must use encryption (BitLocker for Windows).  
+  - **Not Configured** → Intune will not check encryption.
+
+### Device Security
+
+- **Firewall**
+  - **Require** → The device’s firewall must be ON.
+  - **Not Configured** → Intune does not check firewall status.
+
+- **Trusted Platform Module (TPM)**
+  - **Require** → Device must have TPM for security features like BitLocker.
+  - **Not Configured** → TPM is not checked.
+
+- **Antivirus**
+  - **Require** → An antivirus solution must be active on the device.
+  - **Not Configured** → Antivirus status is not checked.
+
+- **Antispyware**
+  - **Require** → Antispyware must be enabled.
+  - **Not Configured** → Intune ignores antispyware state.
+
+### Defender
+
+- **Microsoft Defender Antimalware**
+  - **Require** → Defender AV must be enabled and running.
+  - **Not Configured** → Defender AV state not checked.
+
+- **Microsoft Defender Antimalware minimum version**
+  - Ensures the device runs at least the required Defender version.
+
+- **Microsoft Defender Antimalware security intelligence up-to-date**
+  - **Require** → Virus definitions must be updated.
+  - **Not Configured** → Does not check signature updates.
+
+- **Real-time protection**
+  - **Require** → Real-time scanning must stay ON.
+  - **Not Configured** → No enforcement on real-time protection.
+
+---
 
 </details>
 <details><summary><b>Custom Compliance</b>: JSON + PowerShell script-based custom rules</summary>
