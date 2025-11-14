@@ -1,7 +1,7 @@
 # Implement Compliance Policies in Intune
 
 ## 1. Compliance Policies
-Compliance Policies define the minimum security requirements a device must meet to be considered *compliant*.  <br>
+Compliance Policies define the minimum security requirements a device must meet to be considered *compliant*.
 **Intune evaluates devices based on these rules, and Entra ID can enforce access using Conditional Access.**
 
 **Purpose:**
