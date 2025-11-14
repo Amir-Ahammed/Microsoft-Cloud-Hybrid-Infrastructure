@@ -29,15 +29,49 @@ A compliance policy includes the following components:
 
 ### Compliance Settings
 
-**1. Device Health Requirements**
-- OS version, jailbreak/rooting detection, TPM, secure boot, etc.
+<details><summary><b>Device Health Requirements:</b> OS version, jailbreak/rooting detection, TPM, secure boot, etc.</summary>
 
-**2. Security Requirements**
-- Password/PIN, encryption, firewall, antivirus, threat level, etc.
+Microsoft Attestation Service evaluation settings. Use these settings to confirm that a device has protective measures enabled at boot time
 
-**3. System Requirements**
-- OS updates, disk encryption, configuration levels
+<b>Windows 10 and 11</b>
 
+**1. BitLocker**
+- **Require** → The device must have BitLocker disk encryption enabled.  
+  This protects data at rest and ensures the disk cannot be accessed if stolen.
+- **Not Configured** → Intune will not check whether BitLocker is enabled.
+
+**2. Secure Boot**
+- **Require** → The device must have Secure Boot turned on.  
+  This ensures the device boots only trusted operating system files and prevents boot-level malware.
+- **Not Configured** → Intune won’t evaluate Secure Boot status.
+
+**3. Code Integrity**
+- **Require** → The device must validate code integrity at boot.  
+  This prevents untrusted or modified drivers from loading during startup.
+- **Not Configured** → No evaluation will be done for this setting.
+
+### **Why These Settings Matter**
+These attestation checks increase device security by verifying protections *before* the OS fully loads.  
+They are typically used in:
+- Zero trust environments  
+- High-security organizations  
+- Compliance-driven industries  
+
+> Enabling these ensures only secure and trusted devices are allowed access to company resources.
+
+---
+
+</details>
+<details><summary><b>Security Requirements</b>: Password/PIN, encryption, firewall, antivirus, threat level, etc.</summary>
+
+>
+
+</details>
+<details><summary><b>System Requirements</b>: OS updates, disk encryption, configuration levels</summary>
+
+>
+
+</details>
 <details><summary><b>Custom Compliance</b>: JSON + PowerShell script-based custom rules</summary>
 
 #### Example (PowerShell Script)
