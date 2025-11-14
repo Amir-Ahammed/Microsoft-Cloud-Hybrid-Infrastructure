@@ -38,8 +38,41 @@ A compliance policy includes the following components:
 **3. System Requirements**
 - OS updates, disk encryption, configuration levels
 
-**4. Custom Compliance**
-- JSON + PowerShell script-based custom rules
+<details><summary><b>Custom Compliance</b>: JSON + PowerShell script-based custom rules</summary>
+
+#### Example (PowerShell Script)
+This script checks whether Chrome exists on the device and outputs the result in Intune-required format.
+```
+# Check if Google Chrome is installed
+$chromePath = "C:\Program Files\Google\Chrome\Application\chrome.exe"
+
+if (Test-Path $chromePath) {
+    # Chrome found — Compliant
+    Write-Output "{""ChromeInstalled"": true}"
+}
+else {
+    # Chrome not found — Noncompliant
+    Write-Output "{""ChromeInstalled"": false}"
+}
+```
+
+Example (JSON)
+```
+{
+  "Rules": [
+    {
+      "SettingName": "ChromeInstalled",
+      "Operator": "IsEquals",
+      "DataType": "Boolean",
+      "Operand": true,
+      "DefaultValue": false,
+      "Description": "Checks if Google Chrome is installed on the device."
+    }
+  ]
+}
+
+```
+</details>
 
 ### Actions for Non-Compliance
 These define what Intune should do when a device does not meet compliance rules.
