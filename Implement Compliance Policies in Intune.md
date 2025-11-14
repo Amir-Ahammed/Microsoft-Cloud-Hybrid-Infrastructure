@@ -31,7 +31,8 @@ A compliance policy includes the following components:
 
 <details><summary><b>Device Health Requirements:</b> OS version, jailbreak/rooting detection, TPM, secure boot, etc.</summary>
 
-Microsoft Attestation Service evaluation settings. Use these settings to confirm that a device has protective measures enabled at boot time
+### Microsoft Attestation Service Evaluation Settings. 
+Use these settings to confirm that a device has protective measures enabled at boot time
 
 <b>Windows 10 and 11</b>
 
@@ -50,24 +51,52 @@ Microsoft Attestation Service evaluation settings. Use these settings to confirm
   This prevents untrusted or modified drivers from loading during startup.
 - **Not Configured** → No evaluation will be done for this setting.
 
-### **Why These Settings Matter**
-These attestation checks increase device security by verifying protections *before* the OS fully loads.  
-They are typically used in:
-- Zero trust environments  
-- High-security organizations  
-- Compliance-driven industries  
-
 > Enabling these ensures only secure and trusted devices are allowed access to company resources.
 
 ---
 
 </details>
-<details><summary><b>Security Requirements</b>: Password/PIN, encryption, firewall, antivirus, threat level, etc.</summary>
+<details><summary><b>System Requirements</b>: OS updates, disk encryption, configuration levels</summary>
 
->
+### Device Properties
+Controls compliance based on the device's operating system version.  
+Useful for enforcing minimum OS baselines, blocking outdated or vulnerable versions, or ensuring devices stay within supported OS ranges.
+
+<b>Operating System Version</b>
+
+**1. Minimum OS version** <br>
+Specifies the lowest OS version allowed for compliance.  
+If a device runs an older version, it becomes **non-compliant**.  
+> **Example:** Require at least Windows 11 22H2 for security baselines.
+
+**2. Maximum OS version** <br>
+Specifies the highest OS version allowed.  
+Useful when an organization has not yet approved a new OS release.  
+> **Example:** Block Windows 11 24H2 until app testing is completed.
+
+**3. Minimum OS version for mobile devices** <br>
+Same as above but applies **only to mobile platforms** (iOS/iPadOS/Android).  
+> **Example:** Require iOS 16.0 or later for device compatibility and security.
+
+**4. Maximum OS version for mobile devices** <br>
+Sets the highest approved version for mobile devices.  
+> **Example:** Block iOS beta releases (e.g., iOS 18 Public Beta).
+
+**5. Valid Operating System Builds** <br>
+Allows you to define **specific OS build numbers** that are considered compliant.  
+This is more granular than version number (major.minor), allowing control down to build and patch level.
+
+You can enter up to **three** valid builds. & Exports the current OS build list for audit or documentation.
+
+> **Example Use Cases:**
+> - Allow only Windows 11 build **22621**, **22631**, and **26100**  
+> - Useful for strict environments where patch validation is required  
+> - Helps the organization run only tested and stable builds
+
+---
 
 </details>
-<details><summary><b>System Requirements</b>: OS updates, disk encryption, configuration levels</summary>
+<details><summary><b>Security Requirements</b>: Password/PIN, encryption, firewall, antivirus, threat level, etc.</summary>
 
 >
 
