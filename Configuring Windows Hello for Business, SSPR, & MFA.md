@@ -1,6 +1,32 @@
 # Configuring Windows Hello for Business, SSPR, & MFA
 
-## What is Windows Hello for Business?
+## What is Authentication Methods?
+Authentication methods are the different ways a user can prove their identity when signing in to Microsoft services (like Microsoft 365, Intune, Entra ID).
+
+> They act as evidence that the person signing in is really the account owner.
+
+**Authentication methods are used for:**
+- Sign-in
+- MFA (Multi-Factor Authentication)
+- SSPR (Self-Service Password Reset)
+- Passwordless authentication
+- Verification during risky sign-ins
+
+### Authentication Methods in Entra ID
+1. **Microsoft Authenticator App** - Push notification, number matching, or passwordless sign-in.
+2. **FIDO2 Security Keys** - Hardware keys (YubiKey, Feitian) for passwordless sign-in.
+3. **Windows Hello for Business** - Biometric or PIN tied to TPM chip.
+4. **Temporary Access Pass (TAP)** - Time-limited pass to set up passwordless methods.
+5. **SMS (Text Message)** - One-time verification code sent to a mobile phone.
+6. **Phone Call** - Automated call used to verify the user.
+7. **Email OTP (For B2B Guests)** - One-time passcode sent to email for guest user login.
+8. **Password** - Traditional username + password.
+9. **Certificate-Based Authentication (CBA)** - User signs in using a certificate stored on the device or smart card.
+10. **Passkeys** - Modern passwordless sign-in stored on device (Windows Hello, iOS, Android).
+
+---
+
+## Windows Hello for Business
 Windows Hello for Business is a passwordless authentication method that replaces traditional passwords with:
 - Biometrics (Fingerprint, Face ID)
 - PIN tied to the device’s TPM (Trusted Platform Module)
@@ -9,18 +35,18 @@ Windows Hello for Business is a passwordless authentication method that replaces
 1. Something you have → your device
 2. Something you are or know → biometric or PIN
 
-## What Windows Hello Enables
+### What Windows Hello Enables
 - Passwordless sign-in to Windows 10/11 devices
 - Secure login to Microsoft 365, Azure AD, and on-prem AD (Hybrid)
 - Fast login experience
 - Protection against phishing (no passwords transmitted)
 - TPM-based credential protection
 
-## Configure Windows Hello in Intune
+<details><summary><h3>Configure Windows Hello in Intune</h></summary>
 
 1. **Navigate to**: `Intune → Endpoint security → Account protection → Create Policy`
 2. **Choose:**
-   * **Platform:** Windows 10/11
+   * **Platform:** Windows 10 and later
    * **Profile:** Identity Protection
 3. **Configure settings:**
    * **Device Guard**
@@ -62,4 +88,38 @@ Windows Hello for Business is a passwordless authentication method that replaces
 > - **Credential Guard**: Prevents attackers from using tools like Mimikatz to steal passwords from memory even if they get admin access to the device.
 > - **Facial Features Use Enhanced Anti-Spoofing**: Stops someone from unlocking a device by holding up a photo or video of the user's face during Windows Hello sign-in.
 
+</details>
+
 ---
+
+## Self-Service Password Reset (SSPR)
+
+### What is SSPR?
+Self-Service Password Reset allows users to reset or unlock their own password without IT support by verifying identity through:
+- Authentication methods (Phone, Email, Authenticator app, Security questions)
+
+This reduces helpdesk calls and enables 24/7 support for users.
+
+### How SSPR Works
+- User attempts sign-in
+- Clicks “Can’t access your account?”
+- Completes authentication (MFA or verification methods)
+- Resets password
+- Password syncs to on-prem AD (if hybrid)
+
+### On-Premises Integration
+For hybrid environments:
+- Install **Azure AD Connect**
+- Enable **Password Writeback**
+- This allows SSPR changes from the cloud to update the **on-prem Active Directory**
+
+### Configure SSPR in Entra (Azure AD)
+1. Navigate to: `Entra ID → Password Reset`
+2. Choose who can use SSPR
+   - All
+   - Selected Users/Groups
+3. Authentication Methods
+   - Use the auth methods policy to manage other authentication methods.
+4. On-premises integration
+   - Enable password writeback (for hybrid AD)
+
